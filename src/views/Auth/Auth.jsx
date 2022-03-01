@@ -14,6 +14,7 @@ export default function Auth({ isSigningUp = false }) {
       if (isSigningUp) {
         console.log('isSigningUp', isSigningUp);
         await signUpUser(email, password);
+        history.replace('/sign-in');
       } else {
         // signing in, set the current user with the API call response.
         const resp = await signInUser(email, password);
