@@ -9,11 +9,13 @@ import Profile from './views/Profile/Profile';
 import JobCard from './views/JobCard/JobCard';
 import CreateEdit from './views/CreateEdit/CreateEdit';
 import About from './views/About/About';
+import Header from './components/Header/Header';
 
 export default function App() {
   return (
     <UserProvider>
       <JobProvider>
+        <Header />
         <Router>
           <Switch>
             <Route exact path="/">
