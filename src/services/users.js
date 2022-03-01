@@ -18,12 +18,12 @@ export async function getUser() {
   }
 }
 
-export async function signUpUser(name, email, password) {
+export async function signUpUser(username, email, password) {
   const { user, error } = await client.auth.signUp({ email, password });
   if (error) {
     throw error;
   }
-  const resp = await client.from('profiles').insert({ id: user.id, name }).single();
+  const resp = await client.from('profiles').insert({ id: user.id, username }).single();
   if (resp.error) {
     throw error;
   }
