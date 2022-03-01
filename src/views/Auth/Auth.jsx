@@ -1,5 +1,5 @@
 import React from 'react';
-import { useUser } from '../../context/UserProvider';
+import { useUser } from '../../context/UserContext/UserContext';
 import AuthForm from '../../components/AuthForm/AuthForm';
 import { Link, useHistory } from 'react-router-dom';
 import { signUpUser, signInUser } from '../../services/users';
@@ -16,7 +16,7 @@ export default function Auth({ isSigningUp = false }) {
         history.push('/');
       } else {
         // signing in, set the current user with the API call response.
-        const resp = await signInUser( email, password);
+        const resp = await signInUser(email, password);
         setCurrentUser({ id: resp.id, username: resp.name });
         // history.replace because you don't want to go back to log in page after you logged in
         history.replace('/profile');
