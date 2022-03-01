@@ -29,30 +29,32 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
 
   return (
     <>
-      {loading ? (
-        'Loading'
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <label>Email: </label>
-          <input
-            type="email"
-            name="email"
-            value={formState.email}
-            onChange={handleForm}
-          />
-          <label>Password: </label>
-          <input
-            type="password"
-            name="password"
-            value={formState.password}
-            onChange={handleForm}
-          />
-          <button type="submit" disabled={loading}>
-            {label}
-          </button>
-          <p>{formError}</p>
-        </form>
-      )}
+      <div>
+        {loading ? (
+          'Loading'
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <label className="text-white">Email: </label>
+            <input
+              type="email"
+              name="email"
+              value={formState.email}
+              onChange={handleForm}
+            />
+            <label className="text-white">Password: </label>
+            <input
+              type="password"
+              name="password"
+              value={formState.password}
+              onChange={handleForm}
+            />
+            <button type="submit" disabled={loading}>
+              {label}
+            </button>
+            <p>{formError}</p>
+          </form>
+        )}
+      </div>
     </>
   );
 }

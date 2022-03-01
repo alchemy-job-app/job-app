@@ -17,31 +17,35 @@ export default function JobForm({ isEditing = false }) {
     <>
       <form>
         <input
+          className="text-gunmetal"
           id="company"
           name="company"
           type="text"
-          value={company}
+          value={formState.company}
           onChange={handleForm}
         />
         <input
+          className="text-gunmetal"
           id="deadline"
           name="deadline"
           type="date"
-          value={deadline}
+          value={formState.deadline}
           onChange={handleForm}
         />
         <input
+          className="text-gunmetal"
           id="position"
           name="position"
           type="text"
-          value={position}
+          value={formState.position}
           onChange={handleForm}
         />
         <input
+          className="text-gunmetal"
           id="notes"
           name="notes"
           type="text"
-          value={notes}
+          value={formState.notes}
           onChange={handleForm}
         />
         {/* need something for completion, like a radio button or checkbox */}
