@@ -1,6 +1,9 @@
 import React from 'react';
+import { useJob } from '../../context/JobContext/JobContext';
+import { useUser } from '../../context/UserContext/UserContext';
+import { useForm } from '../../hooks/useForm';
 
-export default function JobForm({ isEditing = false }) {
+export default function JobForm() {
   const { user } = useUser();
   const { job } = useJob();
 
