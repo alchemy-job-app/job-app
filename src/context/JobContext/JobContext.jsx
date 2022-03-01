@@ -15,7 +15,6 @@ function JobProvider({ children }) {
   });
   const [loading, setLoading] = useState(false);
   const { user } = useUser();
-  console.log('job', job);
   // we might need to grab our user and put it into the dependency array
   useEffect(() => {
     const fetchJob = async () => {
