@@ -5,7 +5,6 @@ import { useForm } from '../../hooks/useForm';
 
 export default function JobForm({ onSubmit }) {
   const { job } = useJob();
-
   const { formState, handleForm } = useForm(
     job
       ? {
@@ -77,7 +76,7 @@ export default function JobForm({ onSubmit }) {
           onChange={handleForm}
         />
         {/* need something for completion, like a radio button or checkbox */}
-        <button>Save Changes</button>
+        <button type="submit">Save</button>
       </form>
     </>
     // when they type in the input, it will update
