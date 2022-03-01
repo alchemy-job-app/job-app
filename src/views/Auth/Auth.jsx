@@ -8,7 +8,7 @@ export default function Auth({ isSigningUp = false }) {
   const { setCurrentUser } = useUser();
   const history = useHistory();
 
-  const handleAuth = async (username, email, password) => {
+  const handleAuth = async (email, password) => {
     try {
       // if you are signing up, use signUp services fxn and push to confirm email
       if (isSigningUp) {

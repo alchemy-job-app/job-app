@@ -23,7 +23,10 @@ export async function signUpUser(username, email, password) {
   if (error) {
     throw error;
   }
-  const resp = await client.from('profiles').insert({ id: user.id, username }).single();
+  const resp = await client
+    .from('profiles')
+    .insert({ id: user.id, username })
+    .single();
   if (resp.error) {
     throw error;
   }
@@ -36,7 +39,11 @@ export async function signInUser(email, password) {
   if (error) {
     throw error;
   }
-  const resp = await client.from('profiles').select().match({ id: user.id }).single();
+  const resp = await client
+    .from('profiles')
+    .select()
+    .match({ id: user.id })
+    .single();
 
   return { ...user, ...resp.data };
 }
