@@ -5,28 +5,48 @@ export async function getJobs() {
   return parseData(request);
 }
 
-export async function updateJob({ notes, deadline, company, position, completion }) {
+export async function updateJob({
+  notes,
+  deadline,
+  company,
+  position,
+  completion,
+}) {
   const request = await client
     .from('jobs')
-    .update({ notes, deadline, company, position, completion  })
+    .update({ notes, deadline, company, position, completion })
     .match({ id });
   return parseData(request);
 }
 
-export async function createJob({ notes, deadline, company, position, completion  }) {
+export async function createJob({
+  notes,
+  deadline,
+  company,
+  position,
+  completion,
+}) {
   const request = await client
     .from('jobs')
-    .insert({ notes, deadline, company, position, completion  });
+    .insert({ notes, deadline, company, position, completion });
   return parseData(request);
 }
 // might  need to insert user_id as well
 
 export async function getJobById(id) {
-  const request = await client.from('jobs').select('*').match({id}).single();
+  const request = await client.from('jobs').select('*').match({ id }).single();
   return parseData(request);
 }
 
 export async function deleteJob(id) {
-  const request = await client.from('jobs').delete().match({id}).single();
+  const request = await client.from('jobs').delete().match({ id }).single();
+  return parseData(request);
+}
+
+export async function completedJob(id, completion) {
+  const request = await client
+    .from('jobs')
+    .update({ completion: completion })
+    .eq('id', id);
   return parseData(request);
 }

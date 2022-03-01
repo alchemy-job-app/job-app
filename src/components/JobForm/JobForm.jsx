@@ -1,10 +1,10 @@
 import React from 'react';
 import { useJob } from '../../context/JobContext/JobContext';
-import { useUser } from '../../context/UserContext/UserContext';
 import { useForm } from '../../hooks/useForm';
+import { completedJob, getJobById } from '../../services/jobs';
 
 export default function JobForm({ onSubmit }) {
-  const { job } = useJob();
+  const { job, setJob } = useJob();
   const { formState, handleForm } = useForm(
     job
       ? {
@@ -33,6 +33,12 @@ export default function JobForm({ onSubmit }) {
     } catch (error) {
       throw error;
     }
+  };
+
+  const handleClick = async (job) => {
+    await completedJob(job.id, !job.completion);
+    const resp = await getJobById();
+    setJob(resp);
   };
 
   return (
@@ -74,6 +80,14 @@ export default function JobForm({ onSubmit }) {
           type="text"
           value={formState.notes}
           onChange={handleForm}
+        />
+        <input
+          type="checkbox"
+          checked={formState.completion}
+          name="completion"
+          onChange={() => {
+            handleClick(formState.completion);
+          }}
         />
         {/* need something for completion, like a radio button or checkbox */}
         <button type="submit">Save</button>
