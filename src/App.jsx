@@ -30,14 +30,14 @@ export default function App() {
             <PrivateRoute exact path="/profile">
               <Profile />
             </PrivateRoute>
+            <PrivateRoute exact path="/profile/create">
+              <CreateEdit />
+            </PrivateRoute>
             <PrivateRoute exact path="/profile/:id">
               <JobCard />
             </PrivateRoute>
             <PrivateRoute exact path="/profile/:id/edit">
               <CreateEdit isEditing />
-            </PrivateRoute>
-            <PrivateRoute exact path="/profile/create">
-              <CreateEdit />
             </PrivateRoute>
             <Route exact path="/about">
               <About />

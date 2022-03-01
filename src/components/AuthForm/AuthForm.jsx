@@ -48,7 +48,7 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
               value={formState.password}
               onChange={handleForm}
             />
-            <button type="submit" disabled={loading}>
+            <button type="submit" disabled={loading} className="text-white">
               {label}
             </button>
             <p>{formError}</p>

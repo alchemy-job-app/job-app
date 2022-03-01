@@ -7,7 +7,6 @@ const UserContext = createContext();
 // create UserProvider - provides context that you are giving
 function UserProvider({ children }) {
   const currentUser = getUser();
-  console.log('currentUser', currentUser);
   const [user, setUser] = useState(
     currentUser
       ? { id: currentUser.user.id, email: currentUser.user.email }
