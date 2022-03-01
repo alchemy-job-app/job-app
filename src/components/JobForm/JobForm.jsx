@@ -3,22 +3,43 @@ import { useJob } from '../../context/JobContext/JobContext';
 import { useUser } from '../../context/UserContext/UserContext';
 import { useForm } from '../../hooks/useForm';
 
-export default function JobForm() {
-  const { user } = useUser();
+export default function JobForm({ onSubmit }) {
   const { job } = useJob();
 
-  const { formState, handleForm } = useForm({
-    notes: '',
-    deadline: '',
-    company: '',
-    position: '',
-    completion: '',
-  });
+  const { formState, handleForm } = useForm(
+    job
+      ? {
+          notes: job.notes,
+          deadline: job.deadline,
+          company: job.company,
+          completion: job.completion,
+          position: job.position,
+        }
+      : {
+          notes: '',
+          deadline: '',
+          company: '',
+          position: '',
+          completion: '',
+        }
+  );
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    //when button clicked call onSubmit
+    //define formState
+    const { notes, deadline, company, position, completion } = formState;
+    try {
+      await onSubmit({ notes, deadline, company, position, completion });
+    } catch (error) {
+      throw error;
+    }
+  };
 
   return (
     // a form that a signed in user can fill out
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Company:</label>
         <input
           className="text-gunmetal"
