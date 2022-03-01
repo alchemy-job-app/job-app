@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Header() {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-teal p-4">
@@ -15,7 +17,10 @@ export default function Header() {
         </span>
       </div>
       <div className="block lg:hidden">
-        <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+        <button
+          className="dropdown-toggle flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+          data-bs-toggle="dropdown"
+        >
           <svg
             className="fill-current h-3 w-3"
             viewBox="0 0 20 20"
@@ -23,10 +28,20 @@ export default function Header() {
           >
             <title>Menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            <ul>
+              <li>
+                <a
+                  href="#responsive-header"
+                  className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+                >
+                  Interview Tips
+                </a>
+              </li>
+            </ul>
           </svg>
         </button>
       </div>
-      <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto sm:hidden">
         <div className="text-sm lg:flex-grow">
           <a
             href="#responsive-header"
@@ -46,6 +61,9 @@ export default function Header() {
           >
             Personal
           </a>
+          <p>
+            <Link to="/about"> About Us</Link>
+          </p>
         </div>
         <div>
           <a

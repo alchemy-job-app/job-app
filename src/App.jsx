@@ -15,8 +15,8 @@ export default function App() {
   return (
     <UserProvider>
       <JobProvider>
-        <Header />
         <Router>
+          <Header />
           <Switch>
             <Route exact path="/">
               <Home />
