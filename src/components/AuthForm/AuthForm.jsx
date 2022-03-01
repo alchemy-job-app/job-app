@@ -13,19 +13,13 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
   // which type of form it is (sign in or sign up)
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { username, email, password } = formState;
+    const { email, password } = formState;
     try {
       setFormError('');
-      if (!email || password.length < 8 || !username)
-        throw new Error(
-          'Your username, email, and password with 8+ characters required'
-        );
+      if (!email || password.length < 8)
+        throw new Error('Your email and password with 8+ characters required');
       setLoading(true);
-      if (isSigningUp) {
-        await onSubmit(username, email, password);
-      } else {
-        await onSubmit(email, password);
-      }
+      await onSubmit(email, password);
     } catch (e) {
       setFormError(e.message);
     } finally {
@@ -33,29 +27,12 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
     }
   };
 
-  // useEffect(() => {
-  //   clearForm();
-  // }, [label]);
-
-  const username = (
-    <div>
-      <label>Username: </label>
-      <input
-        type="text"
-        name="username"
-        value={formState.username}
-        onChange={handleForm}
-      />
-    </div>
-  );
-
   return (
     <>
       {loading ? (
         'Loading'
       ) : (
         <form onSubmit={handleSubmit}>
-          {isSigningUp ? username : ''}
           <label>Email: </label>
           <input
             type="email"
