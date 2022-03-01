@@ -1,6 +1,6 @@
 import { client } from './client';
 export function getUser() {
-  return client.auth.user();
+  return client.auth.session();
 }
 
 export function getSession() {
