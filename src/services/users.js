@@ -1,51 +1,24 @@
 import { client } from './client';
-
-export async function getUser() {
-  const session = client.auth.session();
-  if (!session) {
-    return null;
-  }
-  const { data, error } = await client
-    .from('profiles')
-    .select('*')
-    .match({ id: session.user.id })
-    .single();
-  if (error) {
-    throw error;
-  }
-  if (data) {
-    return { ...session.user, ...data };
-  }
+export function getUser() {
+  return client.auth.user();
 }
 
-export async function signUpUser(username, email, password) {
+export function getSession() {
+  return client.auth.session();
+}
+
+export async function signUpUser(email, password) {
+  console.log('email', email);
+  console.log('password', password);
   const { user, error } = await client.auth.signUp({ email, password });
-  if (error) {
-    throw error;
-  }
-  const resp = await client
-    .from('profiles')
-    .insert({ id: user.id, username })
-    .single();
-  if (resp.error) {
-    throw error;
-  }
-  return { ...user, ...resp.data };
+  if (error) throw error;
+  return user;
 }
 
 export async function signInUser(email, password) {
   const { user, error } = await client.auth.signIn({ email, password });
-
-  if (error) {
-    throw error;
-  }
-  const resp = await client
-    .from('profiles')
-    .select()
-    .match({ id: user.id })
-    .single();
-
-  return { ...user, ...resp.data };
+  if (error) throw error;
+  return user;
 }
 
 export async function signOutUser() {
