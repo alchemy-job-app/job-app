@@ -19,6 +19,7 @@ export default function JobForm() {
     // a form that a signed in user can fill out
     <>
       <form>
+        <label>Company:</label>
         <input
           className="text-gunmetal"
           id="company"
@@ -27,6 +28,7 @@ export default function JobForm() {
           value={formState.company}
           onChange={handleForm}
         />
+        <label>Deadline: </label>
         <input
           className="text-gunmetal"
           id="deadline"
@@ -35,6 +37,7 @@ export default function JobForm() {
           value={formState.deadline}
           onChange={handleForm}
         />
+        <label>Position:</label>
         <input
           className="text-gunmetal"
           id="position"
@@ -43,6 +46,7 @@ export default function JobForm() {
           value={formState.position}
           onChange={handleForm}
         />
+        <label>Notes:</label>
         <input
           className="text-gunmetal"
           id="notes"
