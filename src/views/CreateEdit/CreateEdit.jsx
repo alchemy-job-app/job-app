@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import JobForm from '../../components/JobForm/JobForm';
 
-export default function CreateEdit() {
+export default function CreateEdit({ isEditing = false }) {
   return (
-    <div>CreateEdit</div>
-  )
+    <div>
+      <JobForm isEditing />
+    </div>
+  );
 }
