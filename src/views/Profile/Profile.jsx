@@ -11,7 +11,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="bg-gunmetal h-screen w-full">
+    <div className="text-white bg-gunmetal h-screen w-full">
       <button
         onClick={handleClick}
         className="bg-pink text-gunmetal mr-0 p-1 rounded-md hover:bg-manatee"
