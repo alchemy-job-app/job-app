@@ -10,8 +10,6 @@ export default function JobList() {
   const [jobs, setJobs] = useState([]);
   // we might need to grab our user and put it into the dependency array
 
-  console.log('loading', loading);
-
   useEffect(() => {
     const fetchJobs = async () => {
       try {

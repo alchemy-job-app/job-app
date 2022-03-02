@@ -7,7 +7,7 @@ import { createJob, updateJob } from '../../services/jobs';
 
 export default function CreateEdit({ isEditing = false }) {
   const { id } = useParams();
-  const { setJob, loading } = useJob(id);
+  const { setJob, job } = useJob(id);
   const history = useHistory();
 
   const handleJobForm = async (
@@ -46,7 +46,15 @@ export default function CreateEdit({ isEditing = false }) {
 
   return (
     <div className="text-white bg-gunmetal h-screen w-full">
-      <JobForm onSubmit={handleJobForm} isEditing={isEditing} />
+      <JobForm
+        // notes={job?.notes}
+        // deadline={job?.deadline}
+        // company={job?.company}
+        // completion={job?.completion}
+        // position={job?.position}
+        onSubmit={handleJobForm}
+        isEditing={isEditing}
+      />
     </div>
   );
 }
