@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import InterviewForm from '../../components/InterviewForm/InterviewForm';
+import InterviewList from '../../components/InterviewForm/InterviewList';
 import { useUser } from '../../context/UserContext/UserContext';
 import { getInterview } from '../../services/profiles';
 
 export default function Interview() {
-  const [interview, setInterview] = useState({});
+  const [interview, setInterview] = useState([]);
   const [loading2, setLoading2] = useState(true);
   const { user } = useUser();
 
@@ -34,6 +35,7 @@ export default function Interview() {
   return (
     <div>
       <InterviewForm interview={interview} updateInterview={updateInterview} />
+      <InterviewList interview={interview} />
     </div>
   );
 }

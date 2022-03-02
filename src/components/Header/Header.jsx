@@ -10,6 +10,7 @@ export default function Header() {
   const handleSignOut = async () => {
     await signOutUser();
     history.replace('/');
+    window.location.reload();
   };
 
   return (
@@ -59,7 +60,7 @@ export default function Header() {
             About Us
           </a>
         </div>
-        {user ? (
+        {!user.id ? (
           <>
             <div>
               <a
@@ -82,12 +83,16 @@ export default function Header() {
           ''
         )}
         <div>
-          <button
-            onClick={handleSignOut}
-            className="inline-block text-sm px-4 py-2 ml-4 leading-none border rounded text-white border-gunmetal hover:border-transparent bg-gunmetal hover:text-gunmetal hover:bg-white mt-4 lg:mt-0"
-          >
-            Sign Out
-          </button>
+          {user.id ? (
+            <button
+              onClick={handleSignOut}
+              className="inline-block text-sm px-4 py-2 ml-4 leading-none border rounded text-white border-gunmetal hover:border-transparent bg-gunmetal hover:text-gunmetal hover:bg-white mt-4 lg:mt-0"
+            >
+              Sign Out
+            </button>
+          ) : (
+            ''
+          )}
         </div>
       </div>
     </nav>
