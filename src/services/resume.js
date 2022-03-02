@@ -17,15 +17,15 @@ import { client, parseData } from './client';
 export async function uploadResume(id, file) {
   const ext = file.name.split('.').pop();
   await client.storage
-    .from(`resume-images`)
+    .from('resume-images')
     .upload(`resume/${id}.${ext}`, file, { upsert: true });
   const { publicURL } = await client.storage
-    .from(`resume-images`)
-    .getPublicUrl(`resume/${userId}.${ext}`);
+    .from('resume-images')
+    .getPublicUrl(`resume/${id}.${ext}`);
   const resp = await client
-    .from(`profiles`)
-    .update({ resume: publicURL })
-    .eq(`id`, id)
+    .from('profiles')
+    .insert({ resume: publicURL })
+    .eq('id', id)
     .single();
-  return checkError(resp);
+  return parseData(resp);
 }
