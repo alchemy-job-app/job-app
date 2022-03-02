@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import JobList from '../../components/JobList/JobList';
-import { useUser } from '../../context/UserContext/UserContext';
+import { getProfile } from '../../services/profiles';
 
 export default function Profile() {
   const history = useHistory();
-
   const handleClick = () => {
     history.push('/profile/create');
   };
+
+  // const [profile, setProfile] = useState([]);
+  // useEffect(() => {
+  //   const fetchProfile = async () => {
+  //     try {
+  //       const resp = await getProfile();
+  //       setProfile(resp);
+  //     } catch (error) {
+  //       throw error;
+  //     }
+  //   };
+  //   fetchProfile();
+  // }, []);
 
   return (
     <div className="text-white bg-gunmetal h-screen w-full">
@@ -23,7 +35,6 @@ export default function Profile() {
     </div>
   );
 }
-
 // STRETCH GOAL:
 // reordering means that you would have to track the order of the cards
 // readjusting the positioning for all the cards
