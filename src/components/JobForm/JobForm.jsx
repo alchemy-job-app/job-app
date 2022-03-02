@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { useJob } from '../../hooks/useJob';
@@ -6,7 +7,8 @@ import { completedJob, getJobById } from '../../services/jobs';
 
 export default function JobForm({ onSubmit, isEditing }) {
   const { id } = useParams();
-  const { job, setJob, loading } = useJob(id);
+  const { job, setJob } = useJob(id);
+  const history = useHistory();
   const { formState, handleForm, setFormState } = useForm({
     notes: '',
     deadline: '',
@@ -20,7 +22,6 @@ export default function JobForm({ onSubmit, isEditing }) {
   }, [job]);
 
   // useEffect to set edit state into form
-  console.log('job', job);
   const handleSubmit = async (e) => {
     e.preventDefault();
     //when button clicked call onSubmit
@@ -32,6 +33,7 @@ export default function JobForm({ onSubmit, isEditing }) {
     } catch (error) {
       throw error;
     }
+    history.push(`/profile/${id}`);
   };
 
   const handleClick = async (job) => {

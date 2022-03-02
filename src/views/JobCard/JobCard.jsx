@@ -12,6 +12,10 @@ export default function JobCard() {
     history.push(`/profile/${job.id}/edit`);
   };
 
+  const handleBack = () => {
+    history.push('/profile/');
+  };
+
   return (
     <div className="bg-gunmetal h-screen w-full text-white ">
       <div>Company: {job.company}</div>
@@ -19,6 +23,7 @@ export default function JobCard() {
       <div>Position: {job.position}</div>
       <div>Notes: {job.notes}</div>
       <button onClick={handleClick}>Edit</button>
+      <button onClick={handleBack}>Back to Profile</button>
     </div>
   );
 }
