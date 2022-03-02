@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { useJob } from '../../hooks/useJob';
@@ -6,37 +7,33 @@ import { completedJob, getJobById } from '../../services/jobs';
 
 export default function JobForm({ onSubmit, isEditing }) {
   const { id } = useParams();
-  const { job, setJob, loading } = useJob(id);
-  console.log('job', job);
-  const { formState, handleForm } = useForm(
-    job.id
-      ? {
-          notes: job.notes,
-          deadline: job.deadline,
-          company: job.company,
-          completion: job.completion,
-          position: job.position,
-        }
-      : {
-          notes: '',
-          deadline: '',
-          company: '',
-          position: '',
-          completion: false,
-        }
-  );
-  // useEffect to set edit state into form
+  const { job, setJob } = useJob(id);
+  const history = useHistory();
+  const { formState, handleForm, setFormState } = useForm({
+    notes: '',
+    deadline: '',
+    company: '',
+    position: '',
+    completion: false,
+  });
 
+  useEffect(() => {
+    setFormState(job);
+  }, [job]);
+
+  // useEffect to set edit state into form
   const handleSubmit = async (e) => {
     e.preventDefault();
     //when button clicked call onSubmit
     //define formState
     const { notes, deadline, company, position, completion } = formState;
     try {
-      await onSubmit({ notes, deadline, company, position, completion });
+      console.log('form', id);
+      await onSubmit({ id, notes, deadline, company, position, completion });
     } catch (error) {
       throw error;
     }
+    history.push(`/profile/${id}`);
   };
 
   const handleClick = async (job) => {

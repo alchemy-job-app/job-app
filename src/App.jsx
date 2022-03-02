@@ -10,6 +10,7 @@ import CreateEdit from './views/CreateEdit/CreateEdit';
 import About from './views/About/About';
 import Header from './components/Header/Header';
 import Resume from './views/Resume/Resume';
+import Interview from './views/Interview/Interview';
 
 export default function App() {
   return (
@@ -40,6 +41,9 @@ export default function App() {
           </PrivateRoute>
           <PrivateRoute exact path="/profile/:id/edit">
             <CreateEdit isEditing />
+          </PrivateRoute>
+          <PrivateRoute exact path="/interview">
+            <Interview />
           </PrivateRoute>
           <Route exact path="/about">
             <About />
