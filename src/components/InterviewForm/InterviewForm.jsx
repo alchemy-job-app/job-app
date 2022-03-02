@@ -3,7 +3,6 @@ import { useForm } from '../../hooks/useForm';
 import { createInterview } from '../../services/profiles';
 
 export default function InterviewForm({ interview, updateInterview }) {
-  console.log('interview', interview);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

@@ -1,6 +1,18 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { useUser } from '../../context/UserContext/UserContext';
+import { signOutUser } from '../../services/users';
 
 export default function Button() {
+  const { user } = useUser();
+  const history = useHistory();
+
+  const handleSignOut = async () => {
+    await signOutUser();
+    history.replace('/');
+    window.location.reload();
+  };
+
   return (
     <>
       <div className="z-10 position: relative">
@@ -24,19 +36,19 @@ export default function Button() {
             className="bg-white border rounded-md transform scale-0 group-hover:scale-100 absolute 
     transition duration-150 ease-in-out origin-top min-w-32"
           >
-            <a href="/sign-in">
-              <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
-                Sign In
-              </li>
-            </a>
-
+            {!user.id && (
+              <a href="/sign-in">
+                <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
+                  Sign In
+                </li>
+              </a>
+            )}
             <a href="/interview">
               <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
                 Interview Tips
               </li>
             </a>
             <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
-
               Resume
             </li>
             <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
@@ -47,6 +59,13 @@ export default function Button() {
                 About Us
               </li>
             </a>
+            {user.id && (
+              <a href="/" onClick={handleSignOut}>
+                <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
+                  Sign Out
+                </li>
+              </a>
+            )}
           </ul>
         </div>
       </div>

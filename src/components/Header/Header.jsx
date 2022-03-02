@@ -6,7 +6,6 @@ import Button from '../Button/Button';
 export default function Header() {
   const { user } = useUser();
   const history = useHistory();
-  console.log('user', user);
 
   const handleSignOut = async () => {
     await signOutUser();
