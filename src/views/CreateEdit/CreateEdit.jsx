@@ -1,39 +1,27 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import JobForm from '../../components/JobForm/JobForm';
-import { useJob } from '../../hooks/useJob';
 import { createJob, updateJob } from '../../services/jobs';
 
 export default function CreateEdit({ isEditing = false }) {
-  const { id } = useParams();
-  const { setJob, job } = useJob(id);
   const history = useHistory();
-
-  const handleJobForm = async (
+  const handleJobForm = async ({
+    id,
     notes,
     deadline,
     company,
     completion,
-    position
-  ) => {
+    position,
+  }) => {
     try {
       if (isEditing) {
-        const resp = await updateJob({
+        await updateJob({
+          id,
           notes,
           deadline,
           company,
           completion,
           position,
-        });
-        //when save changes is clicked, call updateJob function
-        //set the results into context using setJob
-        setJob({
-          notes: resp.notes,
-          deadline: resp.deadline,
-          company: resp.company,
-          completion: resp.completion,
-          position: resp.position,
         });
       } else {
         await createJob(notes, deadline, company, completion, position);
