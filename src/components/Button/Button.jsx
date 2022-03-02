@@ -35,10 +35,12 @@ export default function Button() {
                 Interview Tips
               </li>
             </a>
-            <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
+            <a href="/resume">
+              <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
+                Resume
+              </li>
+            </a>
 
-              Resume
-            </li>
             <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
               Personal
             </li>
