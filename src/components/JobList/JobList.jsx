@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useUser } from '../../context/UserContext/UserContext';
+import { useJob } from '../../hooks/useJob';
 import { getJobs } from '../../services/jobs';
 import JobCard from '../../views/JobCard/JobCard';
 
 export default function JobList() {
-  //   const { jobs, loading } = useJob();
   const { user } = useUser();
-
-  //   console.log('jobs', jobs);
   const [loading, setLoading] = useState(true);
-
   const [jobs, setJobs] = useState([]);
   // we might need to grab our user and put it into the dependency array
 
