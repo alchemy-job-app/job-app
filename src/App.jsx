@@ -9,6 +9,7 @@ import JobCard from './views/JobCard/JobCard';
 import CreateEdit from './views/CreateEdit/CreateEdit';
 import About from './views/About/About';
 import Header from './components/Header/Header';
+import Resume from './views/Resume/Resume';
 import Interview from './views/Interview/Interview';
 
 export default function App() {
@@ -28,6 +29,9 @@ export default function App() {
           </Route>
           <PrivateRoute exact path="/profile">
             <Profile />
+          </PrivateRoute>
+          <PrivateRoute exact path="/resume">
+            <Resume />
           </PrivateRoute>
           <PrivateRoute exact path="/profile/create">
             <CreateEdit />
