@@ -1,13 +1,13 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import JobForm from '../../components/JobForm/JobForm';
-import { useJob } from '../../context/JobContext/JobContext';
-import { useUser } from '../../context/UserContext/UserContext';
+import { useJob } from '../../hooks/useJob';
 import { createJob, updateJob } from '../../services/jobs';
 
 export default function CreateEdit({ isEditing = false }) {
-  const { user } = useUser();
-  const { setJob } = useJob();
+  const { id } = useParams();
+  const { setJob, loading } = useJob(id);
   const history = useHistory();
 
   const handleJobForm = async (
@@ -26,7 +26,6 @@ export default function CreateEdit({ isEditing = false }) {
           completion,
           position,
         });
-        console.log('resp', resp);
         //when save changes is clicked, call updateJob function
         //set the results into context using setJob
         setJob({

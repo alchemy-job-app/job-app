@@ -1,10 +1,13 @@
 import React from 'react';
-import { useJob } from '../../context/JobContext/JobContext';
+import { useParams } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
+import { useJob } from '../../hooks/useJob';
 import { completedJob, getJobById } from '../../services/jobs';
 
 export default function JobForm({ onSubmit, isEditing }) {
-  const { job, setJob } = useJob();
+  const { id } = useParams();
+  const { job, setJob } = useJob(id);
+  console.log('job', job);
   const { formState, handleForm } = useForm(
     job
       ? {
@@ -22,7 +25,6 @@ export default function JobForm({ onSubmit, isEditing }) {
           completion: false,
         }
   );
-  console.log('job', job);
   const handleSubmit = async (e) => {
     e.preventDefault();
     //when button clicked call onSubmit
@@ -57,6 +59,8 @@ export default function JobForm({ onSubmit, isEditing }) {
 
   return (
     // a form that a signed in user can fill out
+    // when they type in the input, it will update
+    // when they submit the form, the profile info will be set into context for that user
     <>
       <form onSubmit={handleSubmit}>
         <label>Company:</label>
@@ -99,7 +103,5 @@ export default function JobForm({ onSubmit, isEditing }) {
         <button type="submit">Save</button>
       </form>
     </>
-    // when they type in the input, it will update
-    // when they submit the form, the profile info will be set into context for that user
   );
 }
