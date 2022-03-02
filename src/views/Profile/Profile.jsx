@@ -18,8 +18,8 @@ export default function Profile() {
       >
         Add a Job!
       </button>
-      {/* Your Jobs:
-      <JobList /> */}
+      Your Jobs:
+      <JobList />
     </div>
   );
 }

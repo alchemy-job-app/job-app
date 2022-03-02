@@ -1,19 +1,43 @@
-// import React from 'react';
-// import { useJob } from '../../context/JobContext/JobContext';
-// import JobCard from '../../views/JobCard/JobCard';
+import React, { useEffect, useState } from 'react';
+import { useUser } from '../../context/UserContext/UserContext';
+import { getJobs } from '../../services/jobs';
+import JobCard from '../../views/JobCard/JobCard';
 
-// export default function JobList() {
-//   const { jobs, loading } = useJob();
+export default function JobList() {
+  //   const { jobs, loading } = useJob();
+  const { user } = useUser();
 
-//   return (
-//     <div>
-//       <ul>
-//         {jobs.map((job) => (
-//           <li key={job.id}>
-//             <JobCard job={job} />
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
+  //   console.log('jobs', jobs);
+  const [loading, setLoading] = useState(true);
+
+  const [jobs, setJobs] = useState([]);
+  // we might need to grab our user and put it into the dependency array
+
+  console.log('loading', loading);
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const resp = await getJobs({ user_id: user.id });
+        setJobs(resp);
+      } catch (error) {
+        throw error;
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchJobs();
+  }, []);
+
+  return (
+    <div>
+      <ul>
+        {jobs.map((job) => (
+          <li key={job.id}>
+            <JobCard job={job} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

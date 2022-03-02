@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import { getJobById } from '../../services/jobs';
+import { getJobById, getJobs } from '../../services/jobs';
 import { useUser } from '../UserContext/UserContext';
 
 const JobContext = createContext();
@@ -15,7 +15,12 @@ function JobProvider({ children }) {
   });
   const [loading, setLoading] = useState(false);
   const { user } = useUser();
+  const [jobs, setJobs] = useState([]);
   // we might need to grab our user and put it into the dependency array
+
+  console.log('loading', loading);
+  console.log('user', user);
+
   useEffect(() => {
     const fetchJob = async () => {
       setLoading(true);
@@ -38,7 +43,7 @@ function JobProvider({ children }) {
   }, [user]);
 
   return (
-    <JobContext.Provider value={{ job, setJob, loading }}>
+    <JobContext.Provider value={{ loading, jobs, setJobs }}>
       {' '}
       {children}{' '}
     </JobContext.Provider>
