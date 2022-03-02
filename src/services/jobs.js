@@ -1,7 +1,9 @@
 import { client, parseData } from './client';
 
-export async function getJobs() {
+export async function getJobs({ user_id }) {
+  console.log('user_id', user_id);
   const request = await client.from('jobs').select('*').match({ user_id });
+  console.log('request', request);
   return parseData(request);
 }
 
@@ -26,9 +28,14 @@ export async function createJob({
   position,
   completion,
 }) {
-  const request = await client
-    .from('jobs')
-    .insert({ notes, deadline, company, position, completion });
+  const request = await client.from('jobs').insert({
+    notes,
+    deadline,
+    company,
+    position,
+    completion,
+    user_id: client.auth.user().id,
+  });
   return parseData(request);
 }
 // might  need to insert user_id as well

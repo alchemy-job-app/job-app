@@ -1,9 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useJob } from '../../context/JobContext/JobContext';
 
-export default function () {
-  const { job } = useJob();
+export default function JobCard({ job }) {
   const history = useHistory();
 
   const handleClick = () => {
