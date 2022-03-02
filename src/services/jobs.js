@@ -40,7 +40,6 @@ export async function createJob({
 
 export async function getJobById(id) {
   const request = await client.from('jobs').select('*').match({ id }).single();
-  console.log('request', request);
   return parseData(request);
 }
 

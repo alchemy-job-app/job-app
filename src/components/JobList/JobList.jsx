@@ -27,7 +27,7 @@ export default function JobList() {
       }
     };
     fetchJobs();
-  }, []);
+  }, [user]);
 
   return (
     <div>
