@@ -42,7 +42,7 @@ export default function Header() {
             Interview Tips
           </a>
           <a
-            href="#"
+            href="/resume"
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
           >
             Resume
