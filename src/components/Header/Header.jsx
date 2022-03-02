@@ -13,7 +13,7 @@ export default function Header() {
   };
 
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-teal p-4">
+    <nav className="flex items-center justify-between flex-wrap bg-teal p-4 z-50 sticky top-0">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         <svg
           xmlns="http://www.w3.org/2000/svg"
