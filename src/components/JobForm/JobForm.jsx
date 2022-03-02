@@ -7,7 +7,6 @@ import { completedJob, getJobById } from '../../services/jobs';
 export default function JobForm({ onSubmit, isEditing }) {
   const { id } = useParams();
   const { job, setJob, loading } = useJob(id);
-  console.log('job', job);
   const { formState, handleForm } = useForm(
     job.id
       ? {

@@ -9,19 +9,6 @@ export default function Profile() {
     history.push('/profile/create');
   };
 
-  // const [profile, setProfile] = useState([]);
-  // useEffect(() => {
-  //   const fetchProfile = async () => {
-  //     try {
-  //       const resp = await getProfile();
-  //       setProfile(resp);
-  //     } catch (error) {
-  //       throw error;
-  //     }
-  //   };
-  //   fetchProfile();
-  // }, []);
-
   return (
     <div className="text-white bg-gunmetal h-screen w-full">
       <button
