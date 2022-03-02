@@ -25,21 +25,21 @@ export default function Button() {
     transition duration-150 ease-in-out origin-top min-w-32"
           >
             <a href="/sign-in">
-              <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
+              <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
                 Sign In
               </li>
             </a>
-            <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
+            <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
               Interview Tips
             </li>
-            <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
+            <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
               Resume
             </li>
-            <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
+            <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
               Personal
             </li>
             <a href="/about">
-              <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
+              <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
                 About Us
               </li>
             </a>
