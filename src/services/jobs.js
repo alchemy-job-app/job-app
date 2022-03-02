@@ -6,6 +6,7 @@ export async function getJobs({ user_id }) {
 }
 
 export async function updateJob({
+  id,
   notes,
   deadline,
   company,
