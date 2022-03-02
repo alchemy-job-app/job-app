@@ -10,12 +10,10 @@ export default function JobCard({ job }) {
 
   return (
     <>
-      <a>
-        <div>Company: {job.company}</div>
-        <div>Deadline: {job.deadline}</div>
-        <div>Position: {job.position}</div>
-        <div>Notes: {job.notes}</div>
-      </a>
+      <div>Company: {job.company}</div>
+      <div>Deadline: {job.deadline}</div>
+      <div>Position: {job.position}</div>
+      <div>Notes: {job.notes}</div>
     </>
   );
 }

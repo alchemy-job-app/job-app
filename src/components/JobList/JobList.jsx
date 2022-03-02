@@ -32,10 +32,12 @@ export default function JobList() {
   return (
     <div>
       {jobs.map((job) => (
-        <ul key={job.id}>
-          <li>{job.company}</li>
-          <li>{job.deadline}</li>
-        </ul>
+        <a href={`/profile/${job.id}/`} key={job.id}>
+          <ul>
+            <li>{job.company}</li>
+            <li>{job.deadline}</li>
+          </ul>
+        </a>
       ))}
     </div>
   );
