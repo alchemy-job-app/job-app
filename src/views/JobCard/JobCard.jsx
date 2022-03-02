@@ -1,9 +1,11 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import { useJob } from '../../context/JobContext/JobContext';
 
-export default function JobCard({ job }) {
-  const history = useHistory();
-  console.log('job.id', job.id);
+export default function JobCard() {
+  const { id } = useParams();
+  const { job } = useJob(id);
   // const handleClick = () => {
   //   history.push(`/profile/${job.id}/`);
   // };
