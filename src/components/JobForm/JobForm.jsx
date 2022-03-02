@@ -6,10 +6,10 @@ import { completedJob, getJobById } from '../../services/jobs';
 
 export default function JobForm({ onSubmit, isEditing }) {
   const { id } = useParams();
-  const { job, setJob } = useJob(id);
+  const { job, setJob, loading } = useJob(id);
   console.log('job', job);
   const { formState, handleForm } = useForm(
-    job
+    job.id
       ? {
           notes: job.notes,
           deadline: job.deadline,
@@ -25,6 +25,8 @@ export default function JobForm({ onSubmit, isEditing }) {
           completion: false,
         }
   );
+  // useEffect to set edit state into form
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     //when button clicked call onSubmit
@@ -57,6 +59,9 @@ export default function JobForm({ onSubmit, isEditing }) {
     </>
   );
 
+  // if (loading) {
+  //   return <h1>Loading</h1>;
+  // }
   return (
     // a form that a signed in user can fill out
     // when they type in the input, it will update

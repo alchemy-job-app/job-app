@@ -4,6 +4,7 @@ import { getJobById } from '../services/jobs';
 // gives the children access to the info for a job. To be used in editForm, jobCard, etc...
 function useJob(id) {
   const [job, setJob] = useState({
+    id: '',
     notes: '',
     deadline: '',
     company: '',
