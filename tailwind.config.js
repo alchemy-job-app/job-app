@@ -1,7 +1,12 @@
 module.exports = {
   content: ['./src/**/*.{html,js,jsx}'],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        winter: "url('/public/assets/winter.jpg')",
+        city: "url('/public/assets/city.png')",
+      },
+    },
     colors: {
       pink: '#DBC2CF',
       manatee: '#9FA2B2',
