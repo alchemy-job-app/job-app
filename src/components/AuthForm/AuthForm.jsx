@@ -49,14 +49,17 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
               <div className="lg:w-7/12 w-full flex justify-center items-center text-center md:px-16 px-0 z-0 bg-gunmetal">
                 <div className="absolute lg:hidden z-10 inset-0 items-center bg-city bg-cover bg-right h-screen"></div>
                 <div className="w-full py-6 z-20">
-                  <form action="" className="w-1/2 px-4 lg:px-0 mx-auto">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="w-1/2 px-4 lg:px-0 mx-auto"
+                  >
                     <p className="text-4xl mb-12">GoodJob</p>
                     <div className="pb-2 pt-4">
                       <input
                         type="email"
                         name="email"
-                        // value={formState.email}
-                        // onChange={handleForm}
+                        value={formState.email}
+                        onChange={handleForm}
                         placeholder="Email"
                         className="block w-full p-4 text-lg rounded-sm bg-black"
                       />
@@ -66,16 +69,19 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                         type="password"
                         name="password"
                         placeholder="Password"
-                        // value={formState.password}
-                        // onChange={handleForm}
-                        className="block w-full p-4 text-lg rounded-sm bg-black"
+                        value={formState.password}
+                        onChange={handleForm}
+                        className="block w-full p-4 text-lg rounded-sm bg-black text-gunmetal"
                       />
                     </div>
                     <div className="text-right text-gray-400 hover:underline hover:text-gray-100"></div>
                     <div className="px-4 pb-2 pt-4">
-                      <button className=" inline-block text-sm px-4 py-2 ml-4 leading-none border rounded text-white border-white hover:border-transparent bg-tealblue hover:text-gunmetal hover:bg-white mt-4 lg:mt-0 z-10">
-                        Sign In
-                        {/* {label} */}
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className=" inline-block text-sm px-4 py-2 ml-4 leading-none border rounded text-white border-white hover:border-transparent bg-tealblue hover:text-gunmetal hover:bg-white mt-4 lg:mt-0 z-10"
+                      >
+                        {label}
                       </button>
                     </div>
                   </form>
