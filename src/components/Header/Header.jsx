@@ -1,7 +1,17 @@
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { useUser } from '../../context/UserContext/UserContext';
+import { signOutUser } from '../../services/users';
 import Button from '../Button/Button';
 
 export default function Header() {
+  const { user } = useUser();
+  const history = useHistory();
+
+  const handleSignOut = async () => {
+    await signOutUser();
+    history.replace('/');
+  };
+
   return (
     <nav className="flex items-center justify-between flex-wrap bg-teal p-4">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -49,21 +59,35 @@ export default function Header() {
             About Us
           </a>
         </div>
+        {user ? (
+          <>
+            <div>
+              <a
+                href="/sign-in"
+                className="inline-block text-sm px-4 py-2 leading-none border rounded text-gunmetal border-gunmetal hover:border-transparent bg-white hover:text-white hover:bg-gunmetal mt-4 lg:mt-0"
+              >
+                Sign In
+              </a>
+            </div>
+            <div>
+              <a
+                href="/sign-up"
+                className="inline-block text-sm px-4 py-2 ml-4 leading-none border rounded text-white border-gunmetal hover:border-transparent bg-gunmetal hover:text-gunmetal hover:bg-white mt-4 lg:mt-0"
+              >
+                Sign Up
+              </a>
+            </div>
+          </>
+        ) : (
+          ''
+        )}
         <div>
-          <a
-            href="/sign-in"
-            className="inline-block text-sm px-4 py-2 leading-none border rounded text-gunmetal border-gunmetal hover:border-transparent bg-white hover:text-white hover:bg-gunmetal mt-4 lg:mt-0"
-          >
-            Sign In
-          </a>
-        </div>
-        <div>
-          <a
-            href="/sign-up"
+          <button
+            onClick={handleSignOut}
             className="inline-block text-sm px-4 py-2 ml-4 leading-none border rounded text-white border-gunmetal hover:border-transparent bg-gunmetal hover:text-gunmetal hover:bg-white mt-4 lg:mt-0"
           >
-            Sign Up
-          </a>
+            Sign Out
+          </button>
         </div>
       </div>
     </nav>
