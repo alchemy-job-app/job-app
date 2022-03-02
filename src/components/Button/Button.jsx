@@ -22,7 +22,7 @@ export default function Button() {
           </button>
           <ul
             className="bg-white border rounded-md transform scale-0 group-hover:scale-100 absolute 
-    transition duration-150 ease-in-out origin-top min-w-32"
+    transition duration-150 ease-in-out origin-top min-w-32 text-sm"
           >
             <a href="/sign-in">
               <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
@@ -32,7 +32,7 @@ export default function Button() {
 
             <a href="/interview">
               <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
-                Interview Tips
+                Interview Q's
               </li>
             </a>
             <a href="/resume">

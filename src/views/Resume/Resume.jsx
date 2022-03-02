@@ -30,7 +30,7 @@ export default function Resume() {
   console.log('file', file);
 
   return (
-    <div>
+    <div className="bg-gunmetal h-screen w-full text-white">
       Upload Your Resume Here:
       <form onSubmit={handleSubmit}>
         <label>Resume:</label>
