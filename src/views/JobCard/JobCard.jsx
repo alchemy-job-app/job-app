@@ -3,10 +3,10 @@ import { useHistory } from 'react-router-dom';
 
 export default function JobCard({ job }) {
   const history = useHistory();
-
-  const handleClick = () => {
-    history.push(`/profile/${job.id}/edit`);
-  };
+  console.log('job.id', job.id);
+  // const handleClick = () => {
+  //   history.push(`/profile/${job.id}/`);
+  // };
 
   return (
     <>
@@ -14,7 +14,6 @@ export default function JobCard({ job }) {
       <div>Deadline: {job.deadline}</div>
       <div>Position: {job.position}</div>
       <div>Notes: {job.notes}</div>
-      <button onClick={handleClick}>Edit</button>
     </>
   );
 }

@@ -1,9 +1,7 @@
 import { client, parseData } from './client';
 
 export async function getJobs({ user_id }) {
-  console.log('user_id', user_id);
   const request = await client.from('jobs').select('*').match({ user_id });
-  console.log('request', request);
   return parseData(request);
 }
 
@@ -14,11 +12,11 @@ export async function updateJob({
   position,
   completion,
 }) {
-  const request = await client
+  const { data } = await client
     .from('jobs')
     .update({ notes, deadline, company, position, completion })
     .match({ id });
-  return parseData(request);
+  return parseData(data);
 }
 
 export async function createJob({
@@ -42,6 +40,7 @@ export async function createJob({
 
 export async function getJobById(id) {
   const request = await client.from('jobs').select('*').match({ id }).single();
+  console.log('request', request);
   return parseData(request);
 }
 

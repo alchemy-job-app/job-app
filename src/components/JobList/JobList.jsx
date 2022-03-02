@@ -31,13 +31,14 @@ export default function JobList() {
 
   return (
     <div>
-      <ul>
-        {jobs.map((job) => (
-          <li key={job.id}>
-            <JobCard job={job} />
-          </li>
-        ))}
-      </ul>
+      {jobs.map((job) => (
+        <a href={`/profile/${job.id}/`} key={job.id}>
+          <ul>
+            <li>{job.company}</li>
+            <li>{job.deadline}</li>
+          </ul>
+        </a>
+      ))}
     </div>
   );
 }

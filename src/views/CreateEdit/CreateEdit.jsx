@@ -26,6 +26,7 @@ export default function CreateEdit({ isEditing = false }) {
           completion,
           position,
         });
+        console.log('resp', resp);
         //when save changes is clicked, call updateJob function
         //set the results into context using setJob
         setJob({
@@ -45,8 +46,8 @@ export default function CreateEdit({ isEditing = false }) {
   };
 
   return (
-    <div className="text-gunmetal">
-      <JobForm onSubmit={handleJobForm} />
+    <div className="text-white bg-gunmetal h-screen w-full">
+      <JobForm onSubmit={handleJobForm} isEditing={isEditing} />
     </div>
   );
 }

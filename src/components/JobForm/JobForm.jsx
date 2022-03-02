@@ -3,7 +3,7 @@ import { useJob } from '../../context/JobContext/JobContext';
 import { useForm } from '../../hooks/useForm';
 import { completedJob, getJobById } from '../../services/jobs';
 
-export default function JobForm({ onSubmit }) {
+export default function JobForm({ onSubmit, isEditing }) {
   const { job, setJob } = useJob();
   const { formState, handleForm } = useForm(
     job
@@ -19,10 +19,10 @@ export default function JobForm({ onSubmit }) {
           deadline: '',
           company: '',
           position: '',
-          completion: '',
+          completion: false,
         }
   );
-
+  console.log('job', job);
   const handleSubmit = async (e) => {
     e.preventDefault();
     //when button clicked call onSubmit
@@ -40,6 +40,20 @@ export default function JobForm({ onSubmit }) {
     const resp = await getJobById();
     setJob(resp);
   };
+
+  const checkBox = (
+    <>
+      <label>Complete:</label>
+      <input
+        type="checkbox"
+        checked={formState.completion}
+        name="completion"
+        onChange={() => {
+          handleClick(formState.completion);
+        }}
+      />
+    </>
+  );
 
   return (
     // a form that a signed in user can fill out
@@ -81,15 +95,7 @@ export default function JobForm({ onSubmit }) {
           value={formState.notes}
           onChange={handleForm}
         />
-        <input
-          type="checkbox"
-          checked={formState.completion}
-          name="completion"
-          onChange={() => {
-            handleClick(formState.completion);
-          }}
-        />
-        {/* need something for completion, like a radio button or checkbox */}
+        {isEditing ? checkBox : null}
         <button type="submit">Save</button>
       </form>
     </>
