@@ -29,9 +29,11 @@ export default function Button() {
                 Sign In
               </li>
             </a>
-            <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
-              Interview Tips
-            </li>
+            <a href="/interview">
+              <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
+                Interview Tips
+              </li>
+            </a>
             <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
               Resume
             </li>
