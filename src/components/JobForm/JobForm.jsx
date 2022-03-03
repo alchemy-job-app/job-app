@@ -61,9 +61,6 @@ export default function JobForm({ onSubmit, isEditing }) {
     </>
   );
 
-  // if (loading) {
-  //   return <h1>Loading</h1>;
-  // }
   return (
     // a form that a signed in user can fill out
     // when they type in the input, it will update

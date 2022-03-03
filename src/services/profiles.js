@@ -13,6 +13,7 @@ export async function getProfile() {
   if (error) {
     throw error;
   }
+  console.log('data', data);
   return data;
 }
 
@@ -26,5 +27,10 @@ export async function createInterview(interview) {
     interview_q: interview.interview_q,
     user_id: client.auth.user().id,
   });
+  return parseData(request);
+}
+
+export async function deleteInterview(id) {
+  const request = await client.from('profiles').delete().match({ id }).single();
   return parseData(request);
 }
