@@ -1,0 +1,8 @@
+- test UserContext with a mock
+- jest.mock('../../context/UserContext') -> this will mock the context file
+- so that you can use the mock user
+- define the shape of a mockUser if I am logged in, mockUser ={{shape of user object}}
+- Mocking behaviors:
+  - Auth sign in and sign out
+  - Create, Edit, Delete a Job
+  - initialEntries with mock URL for ex
