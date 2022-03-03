@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ViewResume from '../../components/ViewResume/ViewResume';
 import { useUser } from '../../context/UserContext/UserContext';
-import { uploadResume } from '../../services/resume';
+import { getResume, uploadResume } from '../../services/resume';
 
 export default function Resume() {
   const [file, setFile] = useState(null);
   const { user } = useUser();
   //   const { user_id } = user;
+  const [resume, setResume] = useState([]);
+
+  useEffect(() => {
+    const fetchResume = async () => {
+      const data = await getResume(user.id);
+      setResume(data);
+    };
+    fetchResume();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +35,7 @@ export default function Resume() {
   //       return false;
   //   }
   // };
-
+  console.log('file', file);
   return (
     <div className="bg-gunmetal h-screen w-full text-white">
       Upload Your Resume Here:
@@ -34,6 +44,7 @@ export default function Resume() {
         <input id="resume" name="resume" type="file" />
         <button type="submit">Upload</button>
       </form>
+      <ViewResume resume={resume} />
     </div>
   );
 }
