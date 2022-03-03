@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useUser } from '../../context/UserContext/UserContext';
-import { useJob } from '../../hooks/useJob';
 import { getJobs } from '../../services/jobs';
+import Complete from './Complete';
+import InProgress from './InProgress';
 
-export default function JobList() {
+export default function JobList({ isComplete }) {
   const { user } = useUser();
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
+
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -24,33 +26,23 @@ export default function JobList() {
   if (loading) {
     return <h1>Loading</h1>;
   }
-
+  const complete = [],
+    inprogress = [];
+  console.log('complete', complete);
+  console.log('inprogress', inprogress);
   return (
     <div>
-      <div>
-        Completed:
-        {jobs.map((job) => {
-          <a href={`/profile/${job.id}/`} key={job.id}>
-            <ul>
-              <li>{job.company}</li>
-              <li>{job.deadline}</li>
-              <li>{job.completion ? 'Completed' : 'In progress'}</li>
-            </ul>
-          </a>;
-        })}
-      </div>
-      <div>
-        In Progress:
-        {jobs.map((job) => (
-          <a href={`/profile/${job.id}/`} key={job.id}>
-            <ul>
-              <li>{job.company}</li>
-              <li>{job.deadline}</li>
-              <li>{job.completion ? 'Completed' : 'In progress'}</li>
-            </ul>
-          </a>
-        ))}
-      </div>
+      {/* {isComplete ? <Complete jobs={jobs} /> : <InProgress jobs={jobs} />} */}
+      {/* {jobs.forEach((job) => {
+        if (job.completion == true) {
+          complete.push(job);
+        } else {
+          inprogress.push(job);
+        }
+      })} */}
+      {complete.length > 1 && <Complete complete={complete} />}
+      {inprogress.length > 1 && <InProgress inprogress={inprogress} />}
+      <Complete jobs={jobs} />
     </div>
   );
 }
