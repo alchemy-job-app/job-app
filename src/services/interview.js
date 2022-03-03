@@ -1,4 +1,5 @@
 import { client, parseData } from './client';
+
 export async function getInterview(user_id) {
   const request = await client.from('interview').select('*').match({ user_id });
   return parseData(request);

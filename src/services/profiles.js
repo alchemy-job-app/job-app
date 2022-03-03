@@ -5,7 +5,7 @@ export async function getProfile() {
   if (!session) {
     return null;
   }
-  const { data, error } = await client
+  const request = await client
     .from('profiles')
     .select('*')
     .match({ user_id: session.user.id })
@@ -13,6 +13,5 @@ export async function getProfile() {
   if (error) {
     throw error;
   }
-  console.log('data', data);
-  return data;
+  return parseData(request);
 }

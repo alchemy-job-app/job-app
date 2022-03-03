@@ -7,7 +7,6 @@ export default function JobCard() {
   const history = useHistory();
   const { id } = useParams();
   const { job } = useJob(id);
-  console.log('job.id', job.id);
   const handleClick = () => {
     history.push(`/profile/${job.id}/edit`);
   };
@@ -15,13 +14,13 @@ export default function JobCard() {
   const handleBack = () => {
     history.push('/profile/');
   };
-
   return (
     <div className="bg-gunmetal h-screen w-full text-white ">
       <div>Company: {job.company}</div>
       <div>Deadline: {job.deadline}</div>
       <div>Position: {job.position}</div>
       <div>Notes: {job.notes}</div>
+      <div>Status: {job.completion === true ? 'Completed' : 'In Progress'}</div>
       <button onClick={handleClick}>Edit</button>
       <button onClick={handleBack}>Back to Profile</button>
     </div>
