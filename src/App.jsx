@@ -35,7 +35,6 @@ export default function App() {
           <PrivateRoute exact path="/resume">
             <Resume />
           </PrivateRoute>
-
           <PrivateRoute exact path="/profile/create">
             <CreateEdit />
           </PrivateRoute>
