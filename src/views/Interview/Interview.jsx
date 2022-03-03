@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import InterviewForm from '../../components/InterviewForm/InterviewForm';
-import InterviewList from '../../components/InterviewForm/InterviewList';
 import { useUser } from '../../context/UserContext/UserContext';
 import { getInterview } from '../../services/profiles';
 
@@ -26,11 +25,14 @@ export default function Interview() {
   if (loading2) {
     return <h1>loading</h1>;
   }
+  const updateInterview = (key, value) => {
+    interview[key] = value;
+    setInterview({ ...interview });
+  };
 
   return (
     <div>
-      <InterviewForm interview={interview} setInterview={setInterview} />
-      <InterviewList interview={interview} />
+      <InterviewForm interview={interview} updateInterview={updateInterview} />
     </div>
   );
 }

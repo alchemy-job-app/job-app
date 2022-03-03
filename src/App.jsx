@@ -11,6 +11,7 @@ import About from './views/About/About';
 import Header from './components/Header/Header';
 import Resume from './views/Resume/Resume';
 import Interview from './views/Interview/Interview';
+import InterviewList from './components/InterviewForm/InterviewList';
 
 export default function App() {
   return (
