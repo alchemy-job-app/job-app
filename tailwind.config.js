@@ -6,6 +6,7 @@ module.exports = {
         winter: "url('/public/assets/winter.jpg')",
         city: "url('/public/assets/city.png')",
         banner: "url('/public/assets/banner.png')",
+        beach2: "url('/public/assets/beach2.png')",
       },
     },
     colors: {
