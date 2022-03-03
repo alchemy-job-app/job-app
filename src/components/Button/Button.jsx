@@ -45,7 +45,7 @@ export default function Button() {
             )}
             <a href="/interview">
               <li className="rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
-                Interview Q's
+                Interview Prep
               </li>
             </a>
 
@@ -54,9 +54,6 @@ export default function Button() {
                 Resume
               </li>
             </a>
-            <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
-              Personal
-            </li>
             <a href="/about">
               <li className="text-sm rounded-sm px-3 py-1 hover:text-white hover:bg-gunmetal">
                 About Us

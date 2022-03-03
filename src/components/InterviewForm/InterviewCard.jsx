@@ -8,25 +8,31 @@ export default function InterviewCard({ item }) {
   };
   return (
     <div>
-      {/* <p className="text-gunmetal">{item.interview_q}</p>
-      <button
-        onClick={handleDelete}
-        className="block rounded-md text-lg font-semibold text-charcoal border-2 border-charcoal bg-pink"
-      >
-        Delete
-      </button> */}
       <div
-        class="xl:w-1/2 lg:w-7/12 relative w-full lg:mt-0 mt-12 md:px-8"
+        className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         role="list"
       >
-        <div
-          role="listitem"
-          class="bg-white cursor-pointer shadow rounded-lg p-8 relative z-30 mt-7 text-gunmetal"
-        >
-          <p>{item.interview_q}</p>
-          <div class="md:flex items-center justify-between">
-            <h2 class="text-2xl font-semibold leading-6 text-gunmetal-800"></h2>
-            <p class="text-2xl md:mt-0 mt-4 font-semibold leading-6 text-gunmetal-800"></p>
+        <div className="rounded">
+          <div className="w-fit h-fit flex flex-col justify-between dark:bg-gray-800 bg-charcoal dark:border-gray-700 rounded-lg border-2 border-gray-400 mb-6 py-5 px-4 hover:bg-teal hover:border-gunmetal">
+            <div
+              role="listitem"
+              class="bg-white cursor-pointer shadow rounded-lg p-8 relative z-30 mt-7 text-gunmetal truncate..."
+            >
+              <p>Question: {item.interview_q}</p>
+              <p>Answer: {item.answer}</p>
+              <p>Type: {item.type}</p>
+              <p>Company: {item.company}</p>
+              <button
+                onClick={handleDelete}
+                className="block rounded-md text-lg font-semibold text-charcoal border-charcoal bg-pink"
+              >
+                Delete
+              </button>
+              <div class="md:flex items-center justify-between">
+                <h2 class="text-2xl font-semibold leading-6 text-gunmetal-800"></h2>
+                <p class="text-2xl md:mt-0 mt-4 font-semibold leading-6 text-gunmetal-800"></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
