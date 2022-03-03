@@ -28,12 +28,11 @@ export default function JobForm({ onSubmit, isEditing }) {
     //define formState
     const { notes, deadline, company, position, completion } = formState;
     try {
-      console.log('form', id);
       await onSubmit({ id, notes, deadline, company, position, completion });
     } catch (error) {
       throw error;
     }
-    history.push(`/profile/${id}`);
+    history.replace(`/profile`);
   };
 
   const handleClick = async (job) => {

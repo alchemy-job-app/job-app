@@ -7,7 +7,7 @@ export default function JobCard() {
   const history = useHistory();
   const { id } = useParams();
   const { job } = useJob(id);
-
+  console.log('job.id', job.id);
   const handleClick = () => {
     history.push(`/profile/${job.id}/edit`);
   };
