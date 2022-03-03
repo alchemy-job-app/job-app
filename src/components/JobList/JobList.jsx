@@ -28,7 +28,7 @@ export default function JobList() {
   }
 
   return (
-    <div>
+    <div className="flex justify-between justify-self-auto">
       <Complete jobs={jobs.filter((job) => job.completion)} />
       <InProgress jobs={jobs.filter((job) => !job.completion)} />
     </div>
