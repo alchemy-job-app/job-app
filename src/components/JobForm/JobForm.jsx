@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { useJob } from '../../hooks/useJob';
-import { completedJob, getJobById } from '../../services/jobs';
+import { completedJob, deleteJob, getJobById } from '../../services/jobs';
 
 export default function JobForm({ onSubmit, isEditing }) {
   const { id } = useParams();
@@ -40,6 +40,12 @@ export default function JobForm({ onSubmit, isEditing }) {
     await completedJob(job.id, !job.completion);
     const resp = await getJobById();
     setJob(resp);
+  };
+
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    await deleteJob(job.id);
+    history.replace('/profile');
   };
 
   const checkBox = (
@@ -102,6 +108,7 @@ export default function JobForm({ onSubmit, isEditing }) {
           onChange={handleForm}
         />
         {isEditing ? checkBox : null}
+        {isEditing ? <button onClick={handleDelete}>Delete</button> : null}
         <button type="submit">Save</button>
       </form>
     </>

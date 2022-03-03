@@ -23,18 +23,13 @@ export default function Interview() {
     fetchInterview();
   }, []);
 
-  const updateInterview = (key, value) => {
-    interview[key] = value;
-    setInterview({ ...interview });
-  };
-
   if (loading2) {
     return <h1>loading</h1>;
   }
 
   return (
     <div>
-      <InterviewForm interview={interview} updateInterview={updateInterview} />
+      <InterviewForm interview={interview} setInterview={setInterview} />
       <InterviewList interview={interview} />
     </div>
   );
