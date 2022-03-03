@@ -6,7 +6,6 @@ import { getResume, uploadResume } from '../../services/resume';
 export default function Resume() {
   const [file, setFile] = useState(null);
   const { user } = useUser();
-  //   const { user_id } = user;
   const [resume, setResume] = useState([]);
 
   useEffect(() => {
@@ -35,6 +34,7 @@ export default function Resume() {
   //       return false;
   //   }
   // };
+
   console.log('file', file);
   return (
     <div className="bg-gunmetal h-screen w-full text-white">
