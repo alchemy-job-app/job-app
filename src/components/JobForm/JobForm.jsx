@@ -35,9 +35,9 @@ export default function JobForm({ onSubmit, isEditing }) {
     history.replace(`/profile`);
   };
 
-  const handleClick = async (job) => {
+  const handleClick = async () => {
     await completedJob(job.id, !job.completion);
-    const resp = await getJobById();
+    const resp = await getJobById(job.id);
     setJob(resp);
   };
 

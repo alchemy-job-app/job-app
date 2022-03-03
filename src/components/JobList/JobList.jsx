@@ -5,7 +5,7 @@ import { getJobs } from '../../services/jobs';
 
 export default function JobList() {
   const { user } = useUser();
-  const [loading, setLoading] = useState(true);
+  const [setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
   // we might need to grab our user and put it into the dependency array
   useEffect(() => {

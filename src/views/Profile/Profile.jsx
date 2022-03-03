@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import JobList from '../../components/JobList/JobList';
-import { getProfile } from '../../services/profiles';
 
 export default function Profile() {
   const history = useHistory();
