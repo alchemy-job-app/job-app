@@ -24,8 +24,7 @@ export default function CreateEdit({ isEditing = false }) {
           position,
         });
       } else {
-        await createJob(notes, deadline, company, completion, position);
-        history.push('/profile');
+        await createJob({ notes, deadline, company, completion, position });
       }
     } catch (error) {
       throw error;
