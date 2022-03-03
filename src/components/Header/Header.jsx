@@ -91,7 +91,7 @@ export default function Header() {
         <div>
           {user.id ? (
             <>
-              <p>You're signed in as {user.email}</p>
+              <p>You're signed in with {user.email}</p>
               <button
                 onClick={handleSignOut}
                 className="inline-block text-sm px-4 py-2 ml-4 leading-none border rounded text-white border-gunmetal hover:border-transparent bg-gunmetal hover:text-gunmetal hover:bg-white mt-4 lg:mt-0"
