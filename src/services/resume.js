@@ -16,10 +16,10 @@ import { client, parseData } from './client';
 
 export async function uploadResume(id, file) {
   console.log('id', id);
-  const ext = file[0].name.split('.').pop();
-  await client.storage
-    .from('resume-image')
-    .upload(`resume/${id}.${ext}`, file, { upsert: true });
+  console.log('file', file);
+  const ext = file.name.split('.').pop();
+  console.log('ext', ext);
+  await client.storage.from('resume-image').upload(`resume/${id}`, file);
   //   const { publicURL } = client.storage
   //     .from('resume-image')
   //     .getPublicUrl(`resume/${id}.${ext}`);
