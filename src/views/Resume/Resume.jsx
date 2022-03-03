@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useUser } from '../../context/UserContext/UserContext';
 import { uploadResume } from '../../services/resume';
 
-export default function Resume() {
-  const [file, setFile] = useState(null);
+export default function Resume({ file }) {
+  const [file1, setFile] = useState(null);
   const { user } = useUser();
   //   const { user_id } = user;
 
@@ -26,7 +26,7 @@ export default function Resume() {
   //       return false;
   //   }
   // };
-
+  console.log('file', file);
   return (
     <div className="bg-gunmetal h-screen w-full text-white">
       Upload Your Resume Here:
@@ -35,6 +35,7 @@ export default function Resume() {
         <input id="resume" name="resume" type="file" />
         <button type="submit">Upload</button>
       </form>
+      {}
     </div>
   );
 }
