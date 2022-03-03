@@ -43,7 +43,7 @@ export default function InterviewForm({
                   onChange={(e) =>
                     updateInterview('interview_q', e.target.value)
                   }
-                  className="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"
+                  className="w-full font-serif p-4 text-gunmetal outline-none rounded-md"
                 ></textarea>
               </div>
               <button className=" px-4 py-1 mx-auto block rounded-md text-lg font-semibold text-charcoal border-2 border-charcoal bg-pink">

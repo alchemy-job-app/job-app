@@ -76,7 +76,7 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                         value={formState.email}
                         onChange={handleForm}
                         placeholder="Email"
-                        className="block w-full p-4 text-lg rounded-sm bg-black"
+                        className="block w-full p-4 text-lg rounded-sm bg-black text-gunmetal"
                       />
                     </div>
                     <div className="pb-2 pt-4">
@@ -89,7 +89,6 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                         className="block w-full p-4 text-lg rounded-sm bg-black text-gunmetal"
                       />
                     </div>
-                    <div className="text-right text-gray-400 hover:underline hover:text-gray-100"></div>
                     <div className="px-4 pb-2 pt-4">
                       <button
                         type="submit"
