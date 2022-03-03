@@ -15,17 +15,18 @@ import { client, parseData } from './client';
 // }
 
 export async function uploadResume(id, file) {
-  const ext = file.name.split('.').pop();
+  console.log('id', id);
+  const ext = file[0].name.split('.').pop();
   await client.storage
-    .from('resume-images')
+    .from('resume-image')
     .upload(`resume/${id}.${ext}`, file, { upsert: true });
-  const { publicURL } = await client.storage
-    .from('resume-images')
-    .getPublicUrl(`resume/${id}.${ext}`);
-  const resp = await client
-    .from('profiles')
-    .insert({ resume: publicURL })
-    .eq('id', id)
-    .single();
-  return parseData(resp);
+  //   const { publicURL } = client.storage
+  //     .from('resume-image')
+  //     .getPublicUrl(`resume/${id}.${ext}`);
+  //   const resp = await client
+  // .from('profiles')
+  // .insert({ resume: publicURL, user_id: client.auth.user().id })
+  // .eq('user_id', id)
+  // .single();
+  //   return parseData(resp);
 }
