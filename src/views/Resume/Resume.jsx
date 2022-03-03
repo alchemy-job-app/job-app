@@ -37,14 +37,30 @@ export default function Resume() {
 
   console.log('file', file);
   return (
-    <div className="bg-gunmetal h-screen w-full text-white">
-      Upload Your Resume Here:
-      <form onSubmit={handleSubmit}>
-        <label>Resume:</label>
-        <input id="resume" name="resume" type="file" />
-        <button type="submit">Upload</button>
+    <div className="bg-wave bg-no-repeat bg-cover bg-center h-screen sm:h-full text-white">
+      <form className="text-white" onSubmit={handleSubmit}>
+        <div className="px-20 pt-6 mb-12">
+          <div className="bg-charcoal rounded-md px-6 py-10 max-w-2xl mx-auto">
+            <h1 className="text-center text-2xl font-bold mb-10 text-pink">
+              ADD RESUME
+            </h1>
+            <div className="space-y-4 mx-auto">
+              <input
+                id="resume"
+                name="resume"
+                type="file"
+                className="mx-auto"
+              />
+              <button className="px-4 py-2 mx-auto block rounded-md text-lg font-semibold text-gunmetal bg-pink hover:bg-gunmetal hover:text-white">
+                UPLOAD
+              </button>
+            </div>
+          </div>
+        </div>
       </form>
-      <ViewResume resume={resume} />
+      <div>
+        <ViewResume resume={resume} />
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ export default function ViewResume({ resume }) {
     <div>
       {resume.map((item) => (
         <div key={item.id}>
-          <img src={item.resume} />
+          <img src={item.resume} className="mx-auto p-8" />
         </div>
       ))}
     </div>
