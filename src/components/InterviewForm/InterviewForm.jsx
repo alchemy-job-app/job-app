@@ -1,14 +1,20 @@
 import React from 'react';
 import { createInterview } from '../../services/profiles';
+import InterviewList from './InterviewList';
 
-export default function InterviewForm({ interview, updateInterview }) {
+export default function InterviewForm({
+  interview,
+  updateInterview,
+  question,
+}) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await createInterview(interview);
+      await createInterview(question);
     } catch (error) {
       throw error;
     }
+    window.location.reload();
   };
 
   return (
@@ -17,7 +23,8 @@ export default function InterviewForm({ interview, updateInterview }) {
       <form onSubmit={handleSubmit}>
         <label>Interview questions: </label>
         <input
-          type="text"
+          type="textarea"
+          placeholder="enter interview q here"
           value={interview.interview_q}
           name="interview_q"
           onChange={(e) => updateInterview('interview_q', e.target.value)}

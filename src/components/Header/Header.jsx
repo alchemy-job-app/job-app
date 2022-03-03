@@ -42,7 +42,7 @@ export default function Header() {
       <div className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block">
         <div className="text-lg lg:flex-grow">
           <a
-            href="#"
+            href="/interview"
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
           >
             Interview Tips
