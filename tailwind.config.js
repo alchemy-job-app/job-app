@@ -5,6 +5,7 @@ module.exports = {
       backgroundImage: {
         winter: "url('/public/assets/winter.jpg')",
         city: "url('/public/assets/city.png')",
+        banner: "url('/public/assets/banner.png')",
       },
     },
     colors: {
