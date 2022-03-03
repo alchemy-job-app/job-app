@@ -8,6 +8,9 @@ export async function getInterview(user_id) {
 export async function createInterview(interview) {
   const request = await client.from('interview').insert({
     interview_q: interview.interview_q,
+    type: interview.type,
+    company: interview.company,
+    answer: interview.answer,
     user_id: client.auth.user().id,
   });
   return parseData(request);

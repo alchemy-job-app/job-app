@@ -53,12 +53,12 @@ export default function Header() {
           >
             Resume
           </a>
-          <a
+          {/* <a
             href="#"
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
           >
             Personal
-          </a>
+          </a> */}
           <a
             href="/about"
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
