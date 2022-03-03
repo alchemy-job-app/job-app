@@ -38,12 +38,18 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
             <section className="min-h-screen flex items-stretch text-white bg-gunmetal">
               <div className="lg:flex w-5/12 hidden relative items-center">
                 <div className="absolute opacity-70 inset-0 z-0 bg-beach2 bg-no-repeat bg-cover"></div>
-                <div className="w-full px-24 z-10 lg:text-center">
-                  <h1 className="text-5xl font-bold text-left tracking-wide z-10 text-white lg:text-center">
-                    You <span className="text-white">can</span> do it!
+                <div className="w-full px-12 z-10 lg:text-center">
+                  <h1 className="text-5xl font-bold text-left tracking-wide z-10 text-white lg:text-center w-full">
+                    You{' '}
+                    <span className="text-white underline decoration-manatee decoration-8 underline-offset-4">
+                      can
+                    </span>{' '}
+                    do it!
                   </h1>
                   <p className="text-3xl my-4 text-white">
-                    Take the <span className="text-pink">first steps</span> to
+                    <p>
+                      Take the <span className="text-pink">first steps</span> to
+                    </p>
                     acheiving your <span className="text-pink">dream job</span>
                   </p>
                 </div>
