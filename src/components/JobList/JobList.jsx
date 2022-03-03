@@ -4,7 +4,7 @@ import { getJobs } from '../../services/jobs';
 import Complete from './Complete';
 import InProgress from './InProgress';
 
-export default function JobList({ isComplete }) {
+export default function JobList() {
   const { user } = useUser();
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
@@ -26,23 +26,11 @@ export default function JobList({ isComplete }) {
   if (loading) {
     return <h1>Loading</h1>;
   }
-  const complete = [],
-    inprogress = [];
-  console.log('complete', complete);
-  console.log('inprogress', inprogress);
+
   return (
     <div>
-      {/* {isComplete ? <Complete jobs={jobs} /> : <InProgress jobs={jobs} />} */}
-      {/* {jobs.forEach((job) => {
-        if (job.completion == true) {
-          complete.push(job);
-        } else {
-          inprogress.push(job);
-        }
-      })} */}
-      {complete.length > 1 && <Complete complete={complete} />}
-      {inprogress.length > 1 && <InProgress inprogress={inprogress} />}
-      <Complete jobs={jobs} />
+      <Complete jobs={jobs.filter((job) => job.completion)} />
+      <InProgress jobs={jobs.filter((job) => !job.completion)} />
     </div>
   );
 }
