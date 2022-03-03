@@ -5,18 +5,18 @@ import { uploadResume } from '../../services/resume';
 export default function Resume() {
   const [file, setFile] = useState(null);
   const { user } = useUser();
-  const { user_id } = user;
+  //   const { user_id } = user;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('e.target[0].files', e.target[0].files);
     try {
-      const resp = await uploadResume(user_id, e.target.files[0]);
+      const resp = await uploadResume(user.id, e.target[0].files[0]);
       setFile(resp);
     } catch (error) {
       throw error;
     }
   };
-  console.log('file2', file);
 
   // const onChange = ({ target }) => {
   //   switch (target.name) {
@@ -27,8 +27,6 @@ export default function Resume() {
   //   }
   // };
 
-  console.log('file', file);
-
   return (
     <div className="bg-gunmetal h-screen w-full text-white">
       Upload Your Resume Here:
@@ -37,7 +35,6 @@ export default function Resume() {
         <input id="resume" name="resume" type="file" />
         <button type="submit">Upload</button>
       </form>
-      {file}
     </div>
   );
 }
