@@ -94,7 +94,7 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                       <button
                         type="submit"
                         disabled={loading}
-                        className=" inline-block text-sm px-4 py-2 ml-4 leading-none border rounded text-white border-white hover:border-transparent bg-gunmetal hover:text-gunmetal hover:bg-pink hover:border-gunmetal mt-4 lg:mt-0 z-10"
+                        className="inline-block text-sm px-4 py-2 ml-4 leading-none border rounded text-white border-white hover:border-transparent bg-gunmetal hover:text-gunmetal hover:bg-pink hover:border-gunmetal mt-4 lg:mt-0 z-10"
                       >
                         {label}
                       </button>
