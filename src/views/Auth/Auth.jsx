@@ -12,7 +12,6 @@ export default function Auth({ isSigningUp = false }) {
     try {
       // if you are signing up, use signUp services fxn and push to confirm email
       if (isSigningUp) {
-        console.log('isSigningUp', isSigningUp);
         await signUpUser(email, password);
         history.replace('/sign-in');
       } else {

@@ -8,8 +8,6 @@ export function getSession() {
 }
 
 export async function signUpUser(email, password) {
-  console.log('email', email);
-  console.log('password', password);
   const { user, error } = await client.auth.signUp({ email, password });
   if (error) throw error;
   return user;

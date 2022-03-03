@@ -9,7 +9,6 @@ export default function Resume() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('e.target[0].files', e.target[0].files);
     try {
       const resp = await uploadResume(user.id, e.target[0].files[0]);
       setFile(resp);

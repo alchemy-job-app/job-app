@@ -1,10 +1,13 @@
 import React from 'react';
+import InterviewCard from './InterviewCard';
 
 export default function InterviewList({ interview }) {
   return (
     <div>
       {interview.map((item) => (
-        <p key={item.id}>{item.interview_q}</p>
+        <div key={item.id}>
+          <InterviewCard item={item} />
+        </div>
       ))}
     </div>
   );

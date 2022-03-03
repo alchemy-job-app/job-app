@@ -7,7 +7,6 @@ export default function JobList() {
   const { user } = useUser();
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
-  // we might need to grab our user and put it into the dependency array
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -22,16 +21,36 @@ export default function JobList() {
     fetchJobs();
   }, [user]);
 
+  if (loading) {
+    return <h1>Loading</h1>;
+  }
+
   return (
     <div>
-      {jobs.map((job) => (
-        <a href={`/profile/${job.id}/`} key={job.id}>
-          <ul>
-            <li>{job.company}</li>
-            <li>{job.deadline}</li>
-          </ul>
-        </a>
-      ))}
+      <div>
+        Completed:
+        {jobs.map((job) => {
+          <a href={`/profile/${job.id}/`} key={job.id}>
+            <ul>
+              <li>{job.company}</li>
+              <li>{job.deadline}</li>
+              <li>{job.completion ? 'Completed' : 'In progress'}</li>
+            </ul>
+          </a>;
+        })}
+      </div>
+      <div>
+        In Progress:
+        {jobs.map((job) => (
+          <a href={`/profile/${job.id}/`} key={job.id}>
+            <ul>
+              <li>{job.company}</li>
+              <li>{job.deadline}</li>
+              <li>{job.completion ? 'Completed' : 'In progress'}</li>
+            </ul>
+          </a>
+        ))}
+      </div>
     </div>
   );
 }

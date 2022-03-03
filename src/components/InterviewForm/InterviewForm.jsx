@@ -1,6 +1,5 @@
 import React from 'react';
-import { createInterview } from '../../services/profiles';
-import InterviewList from './InterviewList';
+import { createInterview } from '../../services/interview';
 
 export default function InterviewForm({
   interview,
