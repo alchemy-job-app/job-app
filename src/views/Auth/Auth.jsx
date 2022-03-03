@@ -30,26 +30,12 @@ export default function Auth({ isSigningUp = false }) {
   return (
     <>
       <div className="bg-gunmetal text-gunmetal h-screen w-full">
-        <h2 className="text-white">
-          {isSigningUp
-            ? 'Glad you are here - Sign up!'
-            : 'Good to see you again - Sign in!'}
-        </h2>
         <AuthForm
           onSubmit={handleAuth}
           // adding a label as a prop is cool
           label={isSigningUp ? 'Sign Up' : 'Sign In'}
           isSigningUp={isSigningUp}
         />
-        {isSigningUp ? (
-          <p className="text-white">
-            Already have an account? <Link to="/sign-in"> Sign In Here</Link>
-          </p>
-        ) : (
-          <p className="text-white">
-            Need an account? <Link to="/sign-up">Sign Up Here</Link>
-          </p>
-        )}
       </div>
     </>
   );
