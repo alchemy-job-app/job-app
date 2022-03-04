@@ -19,7 +19,6 @@ export default function InterviewForm({
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        {/* <div className="min-h-screen md:px-20 pt-12 bg-road bg-no-repeat bg-center bg-cover"> */}
         <div className="bg-charcoal rounded-md px-6 py-10 max-w-2xl mx-auto">
           <h1 className="text-center text-2xl font-bold text-gray-500 mb-10 text-pink">
             Interview Questions
@@ -100,7 +99,6 @@ export default function InterviewForm({
             </button>
           </div>
         </div>
-        {/* </div> */}
       </form>
     </div>
   );

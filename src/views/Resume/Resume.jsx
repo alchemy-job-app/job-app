@@ -26,16 +26,6 @@ export default function Resume() {
     }
   };
 
-  // const onChange = ({ target }) => {
-  //   switch (target.name) {
-  //     case 'file':
-  //       return setFile(target.files[0]);
-  //     default:
-  //       return false;
-  //   }
-  // };
-
-  console.log('file', file);
   return (
     <div className="bg-wave bg-no-repeat bg-cover bg-center h-screen sm:h-full text-white">
       <form className="text-white" onSubmit={handleSubmit}>

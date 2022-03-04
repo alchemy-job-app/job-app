@@ -33,15 +33,7 @@ export default function CreateEdit({ isEditing = false }) {
 
   return (
     <div className="text-white bg-gunmetal h-screen w-full">
-      <JobForm
-        // notes={job?.notes}
-        // deadline={job?.deadline}
-        // company={job?.company}
-        // completion={job?.completion}
-        // position={job?.position}
-        onSubmit={handleJobForm}
-        isEditing={isEditing}
-      />
+      <JobForm onSubmit={handleJobForm} isEditing={isEditing} />
     </div>
   );
 }

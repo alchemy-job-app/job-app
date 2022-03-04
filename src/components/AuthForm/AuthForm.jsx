@@ -1,6 +1,6 @@
 import { useForm } from '../../hooks/useForm';
 import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 // form will be used for both register and login, depending on
 export default function AuthForm({ onSubmit, label, isSigningUp }) {
   const { formState, handleForm, clearForm, setFormError, formError } = useForm(
