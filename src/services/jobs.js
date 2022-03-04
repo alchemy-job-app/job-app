@@ -37,7 +37,6 @@ export async function createJob({
   });
   return parseData(request);
 }
-// might  need to insert user_id as well
 
 export async function getJobById(id) {
   const request = await client.from('jobs').select('*').match({ id }).single();

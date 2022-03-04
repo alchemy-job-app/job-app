@@ -1,7 +1,7 @@
 import React from 'react';
 import { useUser } from '../../context/UserContext/UserContext';
 import AuthForm from '../../components/AuthForm/AuthForm';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { signUpUser, signInUser } from '../../services/users';
 
 export default function Auth({ isSigningUp = false }) {
@@ -25,13 +25,11 @@ export default function Auth({ isSigningUp = false }) {
       throw error;
     }
   };
-  // depending on whether you are signing up or signing in, render AuthForm
   return (
     <>
       <div className="bg-gunmetal text-gunmetal h-screen w-full">
         <AuthForm
           onSubmit={handleAuth}
-          // adding a label as a prop is cool
           label={isSigningUp ? 'Sign Up' : 'Sign In'}
           isSigningUp={isSigningUp}
         />
