@@ -1,9 +1,20 @@
+# Good Job
+
+- An app that supports software developers in organizing their job application process.
+
+# Team Members
+
+- Kevin Do, Indiana H. Holdsworth, Phoenix Nicholson, Mira Kinebuchi
+
 # Team planning Miro link
 
 https://miro.com/app/board/uXjVOJ2lcbg=/
 
-supabase .env file secrets: SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRna29jYXhhanNmb3l0b3Rjc2N5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDYxNTg5MzksImV4cCI6MTk2MTczNDkzOX0.Fan6buR_B8YT6Vpyd1jyZLmb8zsdVTDxbYQkYnGGOV4
-SUPABASE_URL=https://tgkocaxajsfoytotcscy.supabase.co
+# supabase .env file secrets:
+
+- SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRna29jYXhhanNmb3l0b3Rjc2N5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDYxNTg5MzksImV4cCI6MTk2MTczNDkzOX0.Fan6buR_B8YT6Vpyd1jyZLmb8zsdVTDxbYQkYnGGOV4
+
+- SUPABASE_URL=https://tgkocaxajsfoytotcscy.supabase.co
 
 # adv-react-tailwind-template
 
