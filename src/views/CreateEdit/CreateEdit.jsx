@@ -30,7 +30,7 @@ export default function CreateEdit({ isEditing = false }) {
   };
 
   return (
-    <div className="text-white bg-gunmetal h-screen w-full">
+    <div className="text-white h-screen w-full bg-calm bg-no-repeat bg-cover">
       <JobForm onSubmit={handleJobForm} isEditing={isEditing} />
     </div>
   );

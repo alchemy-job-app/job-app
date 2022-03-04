@@ -9,7 +9,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="text-white bg-wave bg-no-repeat bg-cover h-full sm:h-screen w-full">
+    <div className="text-white bg-calm bg-no-repeat bg-cover h-full sm:h-screen w-full">
       <div className="pt-12">
         <button
           onClick={handleClick}
