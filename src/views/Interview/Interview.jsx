@@ -30,7 +30,7 @@ export default function Interview() {
   };
 
   if (loading2) {
-    return <h1>loading</h1>;
+    return <div></div>;
   }
 
   return (
