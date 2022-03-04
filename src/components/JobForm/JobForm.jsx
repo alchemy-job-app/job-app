@@ -70,9 +70,15 @@ export default function JobForm({ onSubmit, isEditing }) {
       <form onSubmit={handleSubmit}>
         <div class="text-gunmetal min-h-screen md:px-20 pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
-            <h1 class="text-center text-2xl font-bold text-gunmetal-500 mb-10">
-              Edit Job
-            </h1>
+            {isEditing ? (
+              <h1 class="text-center text-2xl font-bold text-gunmetal-500 mb-10">
+                Edit Job
+              </h1>
+            ) : (
+              <h1 class="text-center text-2xl font-bold text-gunmetal-500 mb-10">
+                Add Job
+              </h1>
+            )}
             <div class="space-y-4">
               <div>
                 <label className="text-lx font-serif ">Company:</label>
