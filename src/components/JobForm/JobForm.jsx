@@ -87,6 +87,7 @@ export default function JobForm({ onSubmit, isEditing }) {
                   id="company"
                   name="company"
                   type="text"
+                  aria-label="Company"
                   value={formState.company}
                   onChange={handleForm}
                 />
@@ -100,9 +101,10 @@ export default function JobForm({ onSubmit, isEditing }) {
                   name="notes"
                   type="text"
                   id="description"
+                  aria-label="Notes"
                   cols="30"
                   rows="10"
-                  placeholder="whrite here.."
+                  placeholder="write here.."
                   class="w-full p-4 rounded-md border-2"
                   value={formState.notes}
                   onChange={handleForm}
@@ -115,6 +117,7 @@ export default function JobForm({ onSubmit, isEditing }) {
                   id="deadline"
                   name="deadline"
                   type="date"
+                  aria-label="Deadline"
                   value={formState.deadline}
                   onChange={handleForm}
                 />
@@ -126,6 +129,7 @@ export default function JobForm({ onSubmit, isEditing }) {
                   id="position"
                   name="position"
                   type="text"
+                  aria-label="Position"
                   value={formState.position}
                   onChange={handleForm}
                 />
@@ -133,12 +137,14 @@ export default function JobForm({ onSubmit, isEditing }) {
               <div className="text-lg">{isEditing ? checkBox : null}</div>
               <button
                 type="submit"
+                aria-label="submit"
                 class="hover:text-white hover:bg-gunmetal px-4 py-1 mx-auto block rounded-md text-lg font-semibold text-white border-2 border-white bg-teal"
               >
                 Save
               </button>
               {isEditing ? (
                 <button
+                  aria-label="Delete"
                   className="hover:text-white hover:bg-gunmetal px-4 py-1 mx-auto block rounded-md text-lg font-semibold text-charcoal border-2 border-manatee bg-pink"
                   onClick={handleDelete}
                 >
