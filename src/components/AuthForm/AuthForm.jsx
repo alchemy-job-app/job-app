@@ -14,12 +14,10 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
     e.preventDefault();
     const { email, password } = formState;
     try {
-      if (!email || password.length < 8)
-        alert('Your email and password with 8+ characters required');
       setLoading(true);
       await onSubmit(email, password);
-    } catch (e) {
-      setFormError('Something went wrong, please try again');
+    } catch (error) {
+      throw error;
     } finally {
       setLoading(false);
     }
@@ -44,9 +42,9 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                     do it!
                   </h1>
                   <p className="text-3xl my-4 text-white">
-                    <p>
+                    <span>
                       Take the <span className="text-pink">first steps</span> to
-                    </p>
+                    </span>
                     acheiving your <span className="text-pink">dream job</span>
                   </p>
                 </div>
@@ -98,7 +96,7 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                     <div className="mt-12">
                       {isSigningUp ? (
                         <p className="text-white text-2xl">
-                          <p>Already have an account?</p>
+                          <span>Already have an account?</span>
                           <Link to="/sign-in">
                             <span className="text-pink hover:text-manatee">
                               Sign In
@@ -108,7 +106,7 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                         </p>
                       ) : (
                         <p className="text-white text-2xl">
-                          <p>Need an account? </p>
+                          <span>Need an account? </span>
                           <Link to="/sign-up">
                             <span className="text-pink hover:text-manatee">
                               Sign Up

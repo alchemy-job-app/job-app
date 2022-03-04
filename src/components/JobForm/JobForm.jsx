@@ -68,14 +68,21 @@ export default function JobForm({ onSubmit, isEditing }) {
     // when they submit the form, the profile info will be set into context for that user
     <>
       <form onSubmit={handleSubmit}>
-        <div class="bg-indigo-50 text-gunmetal min-h-screen md:px-20 pt-6">
+
+        <div class="text-gunmetal min-h-screen md:px-20 pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
-            <h1 class="text-center text-2xl font-bold text-gunmetal-500 mb-10">
-              Edit Job
-            </h1>
+            {isEditing ? (
+              <h1 class="text-center text-2xl font-bold text-gunmetal-500 mb-10">
+                Edit Job
+              </h1>
+            ) : (
+              <h1 class="text-center text-2xl font-bold text-gunmetal-500 mb-10">
+                Add Job
+              </h1>
+            )}
             <div class="space-y-4">
               <div>
-                <label className="text-lx font-serif ">Company:</label>
+                <label className="text-lg ">Company:</label>
                 <input
                   className="text-gunmetal ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
                   id="company"
@@ -86,7 +93,7 @@ export default function JobForm({ onSubmit, isEditing }) {
                 />
               </div>
               <div>
-                <label for="description" class="block mb-2 text-lg font-serif">
+                <label for="description" class="block mb-2 text-lg">
                   Notes:
                 </label>
                 <textarea
@@ -97,15 +104,15 @@ export default function JobForm({ onSubmit, isEditing }) {
                   cols="30"
                   rows="10"
                   placeholder="whrite here.."
-                  class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md "
+                  class="w-full p-4 rounded-md border-2"
                   value={formState.notes}
                   onChange={handleForm}
                 ></textarea>
               </div>
               <div>
-                <label className="text-lx font-serif">Deadline: </label>
+                <label className="text-lg">Deadline: </label>
                 <input
-                  className="text-gunmetal text-lx font-serif border-2 rounded-md"
+                  className="text-gunmetal text-lg border-2 rounded-md"
                   id="deadline"
                   name="deadline"
                   type="date"
@@ -114,7 +121,7 @@ export default function JobForm({ onSubmit, isEditing }) {
                 />
               </div>
               <div>
-                <label className="text-lx font-serif">Position:</label>
+                <label className="text-lg">Position:</label>
                 <input
                   className="text-gunmetal ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
                   id="position"
@@ -124,17 +131,16 @@ export default function JobForm({ onSubmit, isEditing }) {
                   onChange={handleForm}
                 />
               </div>
-
+              <div className="text-lg">{isEditing ? checkBox : null}</div>
               <button
                 type="submit"
-                class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600  "
+                class="hover:text-white hover:bg-gunmetal px-4 py-1 mx-auto block rounded-md text-lg font-semibold text-white border-2 border-white bg-teal"
               >
                 Save
               </button>
-              {isEditing ? checkBox : null}
               {isEditing ? (
                 <button
-                  className=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600"
+                  className="hover:text-white hover:bg-gunmetal px-4 py-1 mx-auto block rounded-md text-lg font-semibold text-charcoal border-2 border-manatee bg-pink"
                   onClick={handleDelete}
                 >
                   Delete
