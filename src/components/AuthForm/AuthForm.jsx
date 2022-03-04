@@ -14,12 +14,10 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
     e.preventDefault();
     const { email, password } = formState;
     try {
-      if (!email || password.length < 8)
-        alert('Your email and password with 8+ characters required');
       setLoading(true);
       await onSubmit(email, password);
-    } catch (e) {
-      setFormError('Something went wrong, please try again');
+    } catch (error) {
+      throw error;
     } finally {
       setLoading(false);
     }
