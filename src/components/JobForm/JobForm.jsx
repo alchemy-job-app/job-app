@@ -68,47 +68,7 @@ export default function JobForm({ onSubmit, isEditing }) {
     // when they submit the form, the profile info will be set into context for that user
     <>
       <form onSubmit={handleSubmit}>
-        {/* <label>Company:</label>
-        <input
-          className="text-gunmetal"
-          id="company"
-          name="company"
-          type="text"
-          value={formState.company}
-          onChange={handleForm}
-        />
-        <label>Deadline: </label>
-        <input
-          className="text-gunmetal"
-          id="deadline"
-          name="deadline"
-          type="date"
-          value={formState.deadline}
-          onChange={handleForm}
-        />
-        <label>Position:</label>
-        <input
-          className="text-gunmetal"
-          id="position"
-          name="position"
-          type="text"
-          value={formState.position}
-          onChange={handleForm}
-        />
-        <label>Notes:</label>
-        <input
-          className="text-gunmetal"
-          id="notes"
-          name="notes"
-          type="text"
-          value={formState.notes}
-          onChange={handleForm}
-        />
-        {isEditing ? checkBox : null}
-        {isEditing ? <button onClick={handleDelete}>Delete</button> : null}
-        <button type="submit">Save</button> */}
-
-        <div class="bg-indigo-50 text-gunmetal min-h-screen md:px-20 pt-6">
+        <div class="text-gunmetal min-h-screen md:px-20 pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
             <h1 class="text-center text-2xl font-bold text-gunmetal-500 mb-10">
               Edit Job
@@ -164,14 +124,12 @@ export default function JobForm({ onSubmit, isEditing }) {
                   onChange={handleForm}
                 />
               </div>
-
               <button
                 type="submit"
                 class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600  "
               >
                 Save
               </button>
-
               {isEditing ? checkBox : null}
               {isEditing ? (
                 <button
