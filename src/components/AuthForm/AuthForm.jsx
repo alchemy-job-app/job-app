@@ -3,12 +3,10 @@ import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 // form will be used for both register and login, depending on
 export default function AuthForm({ onSubmit, label, isSigningUp }) {
-  const { formState, handleForm, clearForm, setFormError, formError } = useForm(
-    {
-      email: '',
-      password: '',
-    }
-  );
+  const { formState, handleForm, setFormError } = useForm({
+    email: '',
+    password: '',
+  });
   const [loading, setLoading] = useState(false);
   // onSubmit is the handleAuth from Auth.js, API call will depend on
   // which type of form it is (sign in or sign up)
@@ -16,13 +14,12 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
     e.preventDefault();
     const { email, password } = formState;
     try {
-      setFormError('');
       if (!email || password.length < 8)
-        throw new Error('Your email and password with 8+ characters required');
+        alert('Your email and password with 8+ characters required');
       setLoading(true);
       await onSubmit(email, password);
     } catch (e) {
-      setFormError(e.message);
+      setFormError('Something went wrong, please try again');
     } finally {
       setLoading(false);
     }
