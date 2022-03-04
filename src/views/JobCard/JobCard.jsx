@@ -19,7 +19,7 @@ export default function JobCard() {
       <div className="bg-calm bg-no-repeat bg-cover h-screen w-full text-teal">
         <div className="flex w-full justify-center pt-12 content-center">
           <div className="rounded">
-            <div className="w-96 h-fit flex flex-col justify-between bg-white rounded-lg border border-gray-400 mb-6 py-5 px-4">
+            <div className="overflow-auto w-96 h-fit flex flex-col justify-between bg-white rounded-lg border border-gray-400 mb-6 py-5 px-4">
               <div>
                 <h4 className="mb-3">
                   <span className="font-bold text-3xl m-1">Company:</span>
