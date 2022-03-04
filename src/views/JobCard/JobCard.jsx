@@ -16,70 +16,88 @@ export default function JobCard() {
   };
   return (
     <>
-      <div className="bg-gunmetal h-screen w-full text-teal">
-        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <div class="rounded">
-            <div class="w-88 h-64 flex flex-col justify-between dark:bg-gray-800 bg-white dark:border-gray-700 rounded-lg border border-gray-400 mb-6 py-5 px-4">
+      <div className="bg-calm h-screen w-full text-teal">
+        <div className="flex w-full justify-center pt-12 content-center">
+          <div className="rounded">
+            <div className="w-96 h-fit flex flex-col justify-between bg-white rounded-lg border border-gray-400 mb-6 py-5 px-4">
               <div>
-                <h4 class="text-gray-800 dark:text-gray-100  mb-3">
-                  <span className="text-gray-800 dark:text-gray-100 font-bold text-bg m-1">
-                    Company:
-                  </span>
-                  {job.company}
+                <h4 className="mb-3">
+                  <span className="font-bold text-3xl m-1">Company:</span>
+                  <span className="text-manatee text-3xl">{job.company}</span>
                 </h4>
 
-                <p class="text-gray-800 dark:text-gray-100 text-sm">
-                  <span className="text-gray-800 dark:text-gray-100 font-bold text-sm m-1">
-                    Position:
-                  </span>
-                  {job.position}
+                <p name="text-sm">
+                  <span className="font-bold text-2xl m-1">Position:</span>
+                  <span className="text-manatee text-2xl">{job.position}</span>
                 </p>
 
-                <p class="text-gray-800 dark:text-gray-100 text-sm">
-                  <span className="text-gray-800 dark:text-gray-100 font-bold text-sm m-1">
-                    Notes:
-                  </span>
-                  {job.notes}
+                <p className="text-sm">
+                  <span className="font-bold text-2xl m-1">Notes:</span>
+                  <span className="text-manatee text-2xl">{job.notes}</span>
                 </p>
 
-                <p class="text-gray-800 dark:text-gray-100 font-bold text-sm m-1">
+                <p className="font-bold text-2xl m-1">
                   Status:{' '}
-                  {job.completion === true ? 'Completed' : 'In Progress'}
+                  <span className="text-manatee text-2xl">
+                    {job.completion === true ? 'Completed' : 'In Progress'}
+                  </span>
                 </p>
               </div>
 
               <div>
-                <div class="flex items-center justify-between text-gray-800 dark:text-gray-100">
-                  <p class="text-sm">
-                    <span className="text-gray-800 dark:text-gray-100 font-bold text-sm m-1">
-                      Deadline:
-                    </span>
-                    {job.deadline}
+                <div className="flex items-center justify-between">
+                  <p>
+                    <span className="font-bold text-lg m-1">Deadline:</span>
+                    <span className="text-manatee text-lg">{job.deadline}</span>
                   </p>
-                  <button onClick={handleBack}>Back to Profile</button>
-                  <button
-                    class="w-8 h-8 rounded-full bg-gray-800 dark:bg-gray-100 dark:text-gray-800 text-teal flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-black"
-                    aria-label="edit note"
-                    role="button"
-                    onClick={handleClick}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="icon icon-tabler icon-tabler-pencil"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                  <div className="flex flex-row">
+                    <button
+                      onClick={handleBack}
+                      className="w-8 h-8 rounded-full text-teal hover:text-pink flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-black"
                     >
-                      <path stroke="none" d="M0 0h24v24H0z"></path>
-                      <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
-                      <line x1="13.5" y1="6.5" x2="17.5" y2="10.5"></line>
-                    </svg>
-                  </button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 64 64"
+                        aria-labelledby="title"
+                        aria-describedby="desc"
+                        role="img"
+                      >
+                        <path
+                          data-name="layer1"
+                          d="M43.998 14H7a3 3 0 0 0 0 6h36.998a12 12 0 1 1 0 24H13.672l7.363-6.795a3 3 0 0 0-4.07-4.41L2 47l14.965 14.205a3 3 0 0 0 4.07-4.41L13.672 50h30.326a18 18 0 1 0 0-36z"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-miterlimit="10"
+                          stroke-width="3"
+                          stroke-linejoin="round"
+                          stroke-linecap="round"
+                        ></path>
+                      </svg>
+                    </button>
+                    <button
+                      className="w-8 h-8 rounded-full text-teal hover:text-pink flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-black"
+                      aria-label="edit note"
+                      role="button"
+                      onClick={handleClick}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon-tabler icon-tabler-pencil"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z"></path>
+                        <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
+                        <line x1="13.5" y1="6.5" x2="17.5" y2="10.5"></line>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
