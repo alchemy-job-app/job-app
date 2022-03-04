@@ -33,8 +33,8 @@ export default function JobList() {
       className="grid sm:grid-cols-1 md:grid-cols-2 gap-64 w-fit mx-auto"
       role="list"
     >
-      <Complete jobs={jobs.filter((job) => job.completion)} />
       <InProgress jobs={jobs.filter((job) => !job.completion)} />
+      <Complete jobs={jobs.filter((job) => job.completion)} />
     </div>
   );
 }
