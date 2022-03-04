@@ -67,7 +67,7 @@ export default function JobForm({ onSubmit, isEditing }) {
     // when they submit the form, the profile info will be set into context for that user
     <>
       <form onSubmit={handleSubmit}>
-        <label>Company:</label>
+        {/* <label>Company:</label>
         <input
           className="text-gunmetal"
           id="company"
@@ -105,7 +105,84 @@ export default function JobForm({ onSubmit, isEditing }) {
         />
         {isEditing ? checkBox : null}
         {isEditing ? <button onClick={handleDelete}>Delete</button> : null}
-        <button type="submit">Save</button>
+        <button type="submit">Save</button> */}
+
+        <div class="bg-indigo-50 text-gunmetal min-h-screen md:px-20 pt-6">
+          <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
+            <h1 class="text-center text-2xl font-bold text-gunmetal-500 mb-10">
+              Edit Job
+            </h1>
+            <div class="space-y-4">
+              <div>
+                <label className="text-lx font-serif ">Company:</label>
+                <input
+                  className="text-gunmetal ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
+                  id="company"
+                  name="company"
+                  type="text"
+                  value={formState.company}
+                  onChange={handleForm}
+                />
+              </div>
+              <div>
+                <label for="description" class="block mb-2 text-lg font-serif">
+                  Notes:
+                </label>
+                <textarea
+                  id="notes"
+                  name="notes"
+                  type="text"
+                  id="description"
+                  cols="30"
+                  rows="10"
+                  placeholder="whrite here.."
+                  class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md "
+                  value={formState.notes}
+                  onChange={handleForm}
+                ></textarea>
+              </div>
+              <div>
+                <label className="text-lx font-serif">Deadline: </label>
+                <input
+                  className="text-gunmetal text-lx font-serif border-2 rounded-md"
+                  id="deadline"
+                  name="deadline"
+                  type="date"
+                  value={formState.deadline}
+                  onChange={handleForm}
+                />
+              </div>
+              <div>
+                <label className="text-lx font-serif">Position:</label>
+                <input
+                  className="text-gunmetal ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
+                  id="position"
+                  name="position"
+                  type="text"
+                  value={formState.position}
+                  onChange={handleForm}
+                />
+              </div>
+
+              <button
+                type="submit"
+                class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600  "
+              >
+                Save
+              </button>
+
+              {isEditing ? checkBox : null}
+              {isEditing ? (
+                <button
+                  className=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600"
+                  onClick={handleDelete}
+                >
+                  Delete
+                </button>
+              ) : null}
+            </div>
+          </div>
+        </div>
       </form>
     </>
   );
