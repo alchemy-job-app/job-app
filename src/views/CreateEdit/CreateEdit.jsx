@@ -1,10 +1,8 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import JobForm from '../../components/JobForm/JobForm';
 import { createJob, updateJob } from '../../services/jobs';
 
 export default function CreateEdit({ isEditing = false }) {
-  const history = useHistory();
   const handleJobForm = async ({
     id,
     notes,
@@ -32,16 +30,8 @@ export default function CreateEdit({ isEditing = false }) {
   };
 
   return (
-    <div className="text-white bg-gunmetal h-screen w-full">
-      <JobForm
-        // notes={job?.notes}
-        // deadline={job?.deadline}
-        // company={job?.company}
-        // completion={job?.completion}
-        // position={job?.position}
-        onSubmit={handleJobForm}
-        isEditing={isEditing}
-      />
+    <div className="text-white h-screen w-full bg-calm bg-no-repeat bg-cover">
+      <JobForm onSubmit={handleJobForm} isEditing={isEditing} />
     </div>
   );
 }

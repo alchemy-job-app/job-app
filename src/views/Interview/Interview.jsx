@@ -30,17 +30,23 @@ export default function Interview() {
   };
 
   if (loading2) {
-    return <h1>loading</h1>;
+    return <div></div>;
   }
 
   return (
-    <div className=" text-white h-screen w-full">
-      <InterviewForm
-        interview={{ ...interview }}
-        question={question}
-        updateInterview={updateInterview}
-      />
-      <InterviewList interview={interview} />
+    <div className="h-screen">
+      <div className="text-white md:px-20 pt-12 min-h-screen w-full bg-road bg-no-repeat bg-center bg-cover ">
+        <div>
+          <InterviewForm
+            interview={{ ...interview }}
+            question={question}
+            updateInterview={updateInterview}
+          />
+        </div>
+        <div className="mt-12">
+          <InterviewList interview={interview} />
+        </div>
+      </div>
     </div>
   );
 }

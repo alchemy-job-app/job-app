@@ -2,12 +2,11 @@ import React from 'react';
 
 export default function About() {
   return (
-    <div className="w-full h-screen bg-gunmetal">
+    <div className="w-full h-full min-h-screen bg-gunmetal">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
         <div className="text-center pb-12">
-          <h2 className="text-base font-bold text-manatee">WE ARE TITANIUM</h2>
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-pink">
-            Check our awesome team members
+            Check out our awesome team members
           </h1>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -25,11 +24,17 @@ export default function About() {
                 Software Engineer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                I am a full stack software developer with backgrounds in
+                pharmacy and photography. Utilizing my patient-oriented
+                experiences and my aesthetic-based hobbies, I strive to create
+                elegant user-friendly applications that will make a difference
+                in people’s lives.
               </p>
               <div className="flex justify-start space-x-2">
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://github.com/kevindo1"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -43,7 +48,10 @@ export default function About() {
                     ></path>
                   </svg>
                 </a>
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://www.linkedin.com/in/kdo/"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -70,11 +78,13 @@ export default function About() {
                 Software Engineer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Full-Stack Software Developer and avid organizer
               </p>
               <div className="flex justify-start space-x-2">
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://github.com/H-Indiana-Holdsworth"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -88,7 +98,10 @@ export default function About() {
                     ></path>
                   </svg>
                 </a>
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://www.linkedin.com/in/h-indiana-holdsworth/"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -115,11 +128,17 @@ export default function About() {
                 Software Engineer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                I am a driven, empathetic full stack software developer who puts
+                user experience and interaction in the forefront of my mind. I
+                am passionate about the intersectionality of mental health and
+                tech, and strive to make the online world a more accessible,
+                safe place.
               </p>
               <div className="flex justify-start space-x-2">
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://github.com/mira-kine"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -133,7 +152,10 @@ export default function About() {
                     ></path>
                   </svg>
                 </a>
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://www.linkedin.com/in/mira-kinebuchi/"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -160,11 +182,14 @@ export default function About() {
                 Software Engineer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                I am a full stack software developer that likes to apply my
+                skills to learn and create things I love!
               </p>
               <div className="flex justify-start space-x-2">
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://github.com/phoenix-nicholson"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -178,7 +203,10 @@ export default function About() {
                     ></path>
                   </svg>
                 </a>
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://www.linkedin.com/in/phoenix-nicholson/"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"

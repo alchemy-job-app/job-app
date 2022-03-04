@@ -1,14 +1,12 @@
 import { useForm } from '../../hooks/useForm';
 import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 // form will be used for both register and login, depending on
 export default function AuthForm({ onSubmit, label, isSigningUp }) {
-  const { formState, handleForm, clearForm, setFormError, formError } = useForm(
-    {
-      email: '',
-      password: '',
-    }
-  );
+  const { formState, handleForm, setFormError } = useForm({
+    email: '',
+    password: '',
+  });
   const [loading, setLoading] = useState(false);
   // onSubmit is the handleAuth from Auth.js, API call will depend on
   // which type of form it is (sign in or sign up)
@@ -16,13 +14,10 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
     e.preventDefault();
     const { email, password } = formState;
     try {
-      setFormError('');
-      if (!email || password.length < 8)
-        throw new Error('Your email and password with 8+ characters required');
       setLoading(true);
       await onSubmit(email, password);
-    } catch (e) {
-      setFormError(e.message);
+    } catch (error) {
+      throw error;
     } finally {
       setLoading(false);
     }
@@ -47,9 +42,9 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                     do it!
                   </h1>
                   <p className="text-3xl my-4 text-white">
-                    <p>
+                    <span>
                       Take the <span className="text-pink">first steps</span> to
-                    </p>
+                    </span>
                     acheiving your <span className="text-pink">dream job</span>
                   </p>
                 </div>
@@ -103,7 +98,7 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                     <div className="mt-12">
                       {isSigningUp ? (
                         <p className="text-white text-2xl">
-                          <p>Already have an account?</p>
+                          <span>Already have an account?</span>
                           <Link to="/sign-in">
                             <span className="text-pink hover:text-manatee">
                               Sign In
@@ -113,7 +108,7 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                         </p>
                       ) : (
                         <p className="text-white text-2xl">
-                          <p>Need an account? </p>
+                          <span>Need an account? </span>
                           <Link to="/sign-up">
                             <span className="text-pink hover:text-manatee">
                               Sign Up

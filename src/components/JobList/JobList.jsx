@@ -25,11 +25,14 @@ export default function JobList() {
   }, [user]);
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return <div></div>;
   }
 
   return (
-    <div className="flex justify-between justify-self-auto">
+    <div
+      className="grid sm:grid-cols-1 md:grid-cols-2 gap-64 w-fit mx-auto"
+      role="list"
+    >
       <Complete jobs={jobs.filter((job) => job.completion)} />
       <InProgress jobs={jobs.filter((job) => !job.completion)} />
     </div>

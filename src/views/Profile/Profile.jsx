@@ -9,15 +9,16 @@ export default function Profile() {
   };
 
   return (
-    <div className="text-white bg-gunmetal h-screen w-full">
-      <button
-        onClick={handleClick}
-        className="bg-pink text-gunmetal mr-0 p-1 rounded-md hover:bg-manatee"
-      >
-        Add a Job!
-      </button>
-      Your Jobs:
-      <JobList />
+    <div className="text-white bg-calm bg-no-repeat bg-cover min-h-screen w-full">
+      <div className="pt-12">
+        <button
+          onClick={handleClick}
+          className="bg-pink text-gunmetal justify-center p-2 rounded-md ml-28 mb-12 font-bold hover:bg-manatee mx-auto"
+        >
+          Add a Job!
+        </button>
+        <JobList />
+      </div>
     </div>
   );
 }

@@ -9,6 +9,7 @@ module.exports = {
         beach2: "url('/public/assets/beach2.png')",
         road: "url('/public/assets/road.png')",
         wave: "url('/public/assets/wave.png')",
+        calm: "url('/public/assets/calm.jpg')",
       },
     },
     colors: {
@@ -18,6 +19,7 @@ module.exports = {
       charcoal: '#2E4756',
       gunmetal: '#16262E',
       white: '#e2e8f0',
+      purewhite: '#ffffff',
       pinkcard: '#F0DEE7',
     },
   },
