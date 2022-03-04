@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function About() {
   return (
-    <div className="w-full h-screen bg-gunmetal">
+    <div className="w-full h-full sm:h-screen bg-gunmetal">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
         <div className="text-center pb-12">
           <h2 className="text-base font-bold text-manatee">WE ARE TITANIUM</h2>
