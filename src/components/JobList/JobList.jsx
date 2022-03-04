@@ -24,7 +24,7 @@ export default function JobList() {
   }, [user]);
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return <div></div>;
   }
 
   return (

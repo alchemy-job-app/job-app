@@ -24,8 +24,11 @@ export default function About() {
                 Software Engineer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                I am a motivated and hard-working software engineer with a
+                unique background in pharmacy and neurobiology. Utilizing my
+                patient-oriented experiences and my aesthetic-based hobbies, I
+                strive to create elegant user-friendly applications that will
+                make a difference in people's lives.
               </p>
               <div className="flex justify-start space-x-2">
                 <a
