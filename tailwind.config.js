@@ -9,6 +9,7 @@ module.exports = {
         beach2: "url('/public/assets/beach2.png')",
         road: "url('/public/assets/road.png')",
         wave: "url('/public/assets/wave.png')",
+        calm: "url('/public/assets/calm.jpg')",
       },
     },
     colors: {
