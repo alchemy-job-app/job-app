@@ -68,6 +68,7 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                       <input
                         type="email"
                         name="email"
+                        aria-label="Email"
                         value={formState.email}
                         onChange={handleForm}
                         placeholder="Email"
@@ -78,6 +79,7 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                       <input
                         type="password"
                         name="password"
+                        aria-label="Password"
                         placeholder="Password"
                         value={formState.password}
                         onChange={handleForm}

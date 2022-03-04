@@ -13,6 +13,7 @@ export default function JobList() {
     const fetchJobs = async () => {
       try {
         const resp = await getJobs({ user_id: user.id });
+        console.log('resp :>> ', resp);
         setJobs(resp);
       } catch (error) {
         throw error;

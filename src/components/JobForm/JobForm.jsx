@@ -68,7 +68,6 @@ export default function JobForm({ onSubmit, isEditing }) {
     // when they submit the form, the profile info will be set into context for that user
     <>
       <form onSubmit={handleSubmit}>
-
         <div class="text-gunmetal min-h-screen md:px-20 pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
             {isEditing ? (

@@ -47,7 +47,7 @@ export default function Resume() {
                   />
                 </div>
                 <button className=" hover:text-white hover:bg-gunmetal px-4 py-1 mx-auto block rounded-md text-lg font-semibold text-charcoal border-2 border-charcoal bg-pink">
-                  ADD
+                  UPLOAD
                 </button>
               </div>
             </div>
