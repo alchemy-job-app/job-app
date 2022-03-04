@@ -9,13 +9,14 @@ export default function JobForm({ onSubmit, isEditing }) {
   const { id } = useParams();
   const { job, setJob } = useJob(id);
   const history = useHistory();
-  const { formState, handleForm, setFormState } = useForm({
-    notes: '',
-    deadline: '',
-    company: '',
-    position: '',
-    completion: false,
-  });
+  const { formState, handleForm, setFormState, setFormError, formError } =
+    useForm({
+      notes: '',
+      deadline: '',
+      company: '',
+      position: '',
+      completion: false,
+    });
 
   useEffect(() => {
     setFormState(job);
@@ -29,10 +30,10 @@ export default function JobForm({ onSubmit, isEditing }) {
     const { notes, deadline, company, position, completion } = formState;
     try {
       await onSubmit({ id, notes, deadline, company, position, completion });
+      history.replace(`/profile`);
     } catch (error) {
-      throw error;
+      setFormError('Please add a deadline!');
     }
-    history.replace(`/profile`);
   };
 
   const handleClick = async () => {
@@ -107,6 +108,7 @@ export default function JobForm({ onSubmit, isEditing }) {
         {isEditing ? <button onClick={handleDelete}>Delete</button> : null}
         <button type="submit">Save</button>
       </form>
+      {formError}
     </>
   );
 }
