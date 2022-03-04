@@ -45,7 +45,7 @@ export default function JobCard() {
               </div>
 
               <div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mt-8">
                   <p>
                     <span className="font-bold text-lg m-1">Deadline:</span>
                     <span className="text-manatee text-lg">{job.deadline}</span>
