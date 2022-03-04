@@ -87,8 +87,9 @@ export default function Header() {
             <>
               <div className="flex w-full md:items-center">
                 <div className="sm-hidden">
-                  <p className="items-center text-pink">
-                    You're signed in with {user.email}
+                  <p className="items-center text-white">
+                    You're signed in with{' '}
+                    <span className="text-pink">{user.email}</span>
                   </p>
                 </div>
                 <button
