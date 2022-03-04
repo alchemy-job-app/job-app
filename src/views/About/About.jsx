@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function About() {
   return (
-    <div className="w-full h-full sm:h-screen bg-gunmetal">
+    <div className="w-full h-full min-h-screen bg-gunmetal">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
         <div className="text-center pb-12">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-pink">
@@ -24,8 +24,11 @@ export default function About() {
                 Software Engineer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                I am a full stack software developer with backgrounds in
+                pharmacy and photography. Utilizing my patient-oriented
+                experiences and my aesthetic-based hobbies, I strive to create
+                elegant user-friendly applications that will make a difference
+                in people’s lives.
               </p>
               <div className="flex justify-start space-x-2">
                 <a
@@ -75,8 +78,7 @@ export default function About() {
                 Software Engineer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Full-Stack Software Developer and avid organizer
               </p>
               <div className="flex justify-start space-x-2">
                 <a
@@ -126,8 +128,9 @@ export default function About() {
                 Software Engineer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                I am a full stack software developer who puts user experience
+                and interaction in the forefront of my mind. Passionate about
+                mental health and tech and accessibility for both.
               </p>
               <div className="flex justify-start space-x-2">
                 <a
@@ -177,8 +180,8 @@ export default function About() {
                 Software Engineer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                I am a full stack software developer that likes to apply my
+                skills to learn and create things I love!
               </p>
               <div className="flex justify-start space-x-2">
                 <a

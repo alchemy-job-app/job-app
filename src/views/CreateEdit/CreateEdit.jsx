@@ -1,10 +1,8 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import JobForm from '../../components/JobForm/JobForm';
 import { createJob, updateJob } from '../../services/jobs';
 
 export default function CreateEdit({ isEditing = false }) {
-  const history = useHistory();
   const handleJobForm = async ({
     id,
     notes,

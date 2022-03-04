@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
@@ -29,17 +29,19 @@ export default function JobForm({ onSubmit, isEditing }) {
     //define formState
     const { notes, deadline, company, position, completion } = formState;
     try {
-      await onSubmit({ id, notes, deadline, company, position, completion });
-      history.replace(`/profile`);
+      if (isEditing) {
+        await completedJob(job.id, !job.completion);
+        await onSubmit({ id, notes, deadline, company, position, completion });
+        const resp = await getJobById(job.id);
+        setJob(resp);
+        history.replace(`/profile`);
+      } else {
+        await onSubmit({ notes, deadline, company, position, completion });
+        history.replace(`/profile`);
+      }
     } catch (error) {
       setFormError('Please add a deadline!');
     }
-  };
-
-  const handleClick = async () => {
-    await completedJob(job.id, !job.completion);
-    const resp = await getJobById(job.id);
-    setJob(resp);
   };
 
   const handleDelete = async (e) => {
@@ -55,9 +57,7 @@ export default function JobForm({ onSubmit, isEditing }) {
         type="checkbox"
         checked={formState.completion}
         name="completion"
-        onChange={() => {
-          handleClick(formState.completion);
-        }}
+        onChange={() => setFormState(!job.completion)}
       />
     </>
   );
@@ -68,46 +68,6 @@ export default function JobForm({ onSubmit, isEditing }) {
     // when they submit the form, the profile info will be set into context for that user
     <>
       <form onSubmit={handleSubmit}>
-        {/* <label>Company:</label>
-        <input
-          className="text-gunmetal"
-          id="company"
-          name="company"
-          type="text"
-          value={formState.company}
-          onChange={handleForm}
-        />
-        <label>Deadline: </label>
-        <input
-          className="text-gunmetal"
-          id="deadline"
-          name="deadline"
-          type="date"
-          value={formState.deadline}
-          onChange={handleForm}
-        />
-        <label>Position:</label>
-        <input
-          className="text-gunmetal"
-          id="position"
-          name="position"
-          type="text"
-          value={formState.position}
-          onChange={handleForm}
-        />
-        <label>Notes:</label>
-        <input
-          className="text-gunmetal"
-          id="notes"
-          name="notes"
-          type="text"
-          value={formState.notes}
-          onChange={handleForm}
-        />
-        {isEditing ? checkBox : null}
-        {isEditing ? <button onClick={handleDelete}>Delete</button> : null}
-        <button type="submit">Save</button> */}
-
         <div class="bg-indigo-50 text-gunmetal min-h-screen md:px-20 pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
             <h1 class="text-center text-2xl font-bold text-gunmetal-500 mb-10">
@@ -171,7 +131,6 @@ export default function JobForm({ onSubmit, isEditing }) {
               >
                 Save
               </button>
-
               {isEditing ? checkBox : null}
               {isEditing ? (
                 <button
