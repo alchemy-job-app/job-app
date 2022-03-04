@@ -23,6 +23,8 @@ export default function Resume() {
       setFile(resp);
     } catch (error) {
       throw error;
+    } finally {
+      window.location.reload();
     }
   };
 
@@ -35,32 +37,33 @@ export default function Resume() {
   //   }
   // };
 
-  console.log('file', file);
   return (
-    <div className="bg-wave bg-no-repeat bg-cover bg-center h-screen sm:h-full text-white">
+    <div>
       <form className="text-white" onSubmit={handleSubmit}>
-        <div className="px-20 pt-6 mb-12">
+        <div className="bg-wave bg-no-repeat bg-cover bg-center min-h-screen text-white">
           <div className="bg-charcoal rounded-md px-6 py-10 max-w-2xl mx-auto">
-            <h1 className="text-center text-2xl font-bold mb-10 text-pink">
+            <h1 className="text-center text-2xl font-bold text-gray-500 mb-10 text-pink">
               ADD RESUME
             </h1>
-            <div className="space-y-4 mx-auto">
-              <input
-                id="resume"
-                name="resume"
-                type="file"
-                className="mx-auto"
-              />
-              <button className="px-4 py-2 mx-auto block rounded-md text-lg font-semibold text-gunmetal bg-pink hover:bg-gunmetal hover:text-white">
-                UPLOAD
+            <div className="space-y-4">
+              <div>
+                <input
+                  id="resume"
+                  name="resume"
+                  type="file"
+                  className="sm:mx-52 mx-12 mb-4"
+                />
+              </div>
+              <button className=" hover:text-white hover:bg-gunmetal px-4 py-1 mx-auto block rounded-md text-lg font-semibold text-charcoal border-2 border-charcoal bg-pink">
+                ADD
               </button>
             </div>
           </div>
+          <div>
+            <ViewResume resume={resume} />
+          </div>
         </div>
       </form>
-      <div>
-        <ViewResume resume={resume} />
-      </div>
     </div>
   );
 }
