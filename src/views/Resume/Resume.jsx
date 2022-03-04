@@ -41,22 +41,24 @@ export default function Resume() {
     <div>
       <form className="text-white" onSubmit={handleSubmit}>
         <div className="bg-wave bg-no-repeat bg-cover bg-center min-h-screen text-white">
-          <div className="bg-charcoal rounded-md px-6 py-10 max-w-2xl mx-auto">
-            <h1 className="text-center text-2xl font-bold text-gray-500 mb-10 text-pink">
-              ADD RESUME
-            </h1>
-            <div className="space-y-4">
-              <div>
-                <input
-                  id="resume"
-                  name="resume"
-                  type="file"
-                  className="sm:mx-52 mx-12 mb-4"
-                />
+          <div className="pt-8">
+            <div className="bg-charcoal rounded-md px-6 py-6 max-w-sm mx-auto">
+              <h1 className="text-center text-2xl font-bold text-gray-500 mb-10 text-pink">
+                ADD RESUME
+              </h1>
+              <div className="space-y-4">
+                <div>
+                  <input
+                    id="resume"
+                    name="resume"
+                    type="file"
+                    className="sm:mx-16 mx-8 mb-4"
+                  />
+                </div>
+                <button className=" hover:text-white hover:bg-gunmetal px-4 py-1 mx-auto block rounded-md text-lg font-semibold text-charcoal border-2 border-charcoal bg-pink">
+                  ADD
+                </button>
               </div>
-              <button className=" hover:text-white hover:bg-gunmetal px-4 py-1 mx-auto block rounded-md text-lg font-semibold text-charcoal border-2 border-charcoal bg-pink">
-                ADD
-              </button>
             </div>
           </div>
           <div>
