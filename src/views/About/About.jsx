@@ -5,9 +5,8 @@ export default function About() {
     <div className="w-full h-full sm:h-screen bg-gunmetal">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
         <div className="text-center pb-12">
-          <h2 className="text-base font-bold text-manatee">WE ARE TITANIUM</h2>
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-pink">
-            Check our awesome team members
+            Check out our awesome team members
           </h1>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -29,7 +28,10 @@ export default function About() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
               <div className="flex justify-start space-x-2">
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://github.com/kevindo1"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -43,7 +45,10 @@ export default function About() {
                     ></path>
                   </svg>
                 </a>
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://www.linkedin.com/in/kdo/"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -74,7 +79,10 @@ export default function About() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
               <div className="flex justify-start space-x-2">
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://github.com/H-Indiana-Holdsworth"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -88,7 +96,10 @@ export default function About() {
                     ></path>
                   </svg>
                 </a>
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://www.linkedin.com/in/h-indiana-holdsworth/"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -119,7 +130,10 @@ export default function About() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
               <div className="flex justify-start space-x-2">
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://github.com/mira-kine"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -133,7 +147,10 @@ export default function About() {
                     ></path>
                   </svg>
                 </a>
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://www.linkedin.com/in/mira-kinebuchi/"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -164,7 +181,10 @@ export default function About() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
               <div className="flex justify-start space-x-2">
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://github.com/phoenix-nicholson"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
@@ -178,7 +198,10 @@ export default function About() {
                     ></path>
                   </svg>
                 </a>
-                <a href="#" className="text-pink hover:text-teal">
+                <a
+                  href="https://www.linkedin.com/in/phoenix-nicholson/"
+                  className="text-pink hover:text-teal"
+                >
                   <svg
                     className="w-6 h-6"
                     aria-hidden="true"
