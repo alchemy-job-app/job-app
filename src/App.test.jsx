@@ -55,6 +55,7 @@ afterAll(() => {
   server.close();
 });
 
+// Auth tests
 it('should display a "sign in" button when user is logged out', () => {
   const { container } = render(
     <UserProvider>
@@ -64,18 +65,6 @@ it('should display a "sign in" button when user is logged out', () => {
     </UserProvider>
   );
   expect(container).toMatchSnapshot();
-});
-
-it('should display a list of jobs', async () => {
-  render(
-    <UserProvider>
-      <MemoryRouter initialEntries={['/profile']}>
-        <Auth />
-      </MemoryRouter>
-    </UserProvider>
-  );
-  await screen.findByText(/Amazon/i);
-  await screen.findByText(/Tanium/i);
 });
 
 it('should sign user up/sign in', () => {
@@ -98,6 +87,20 @@ it('should sign user up/sign in', () => {
   expect(addJobBtn).toBeInTheDocument();
 });
 
+// JobList view
+it('should display a list of jobs', async () => {
+  render(
+    <UserProvider>
+      <MemoryRouter initialEntries={['/profile']}>
+        <Auth />
+      </MemoryRouter>
+    </UserProvider>
+  );
+  await screen.findByText(/Amazon/i);
+  await screen.findByText(/Tanium/i);
+});
+
+// CRUD tests
 it('should add a new job to the job list', () => {
   const companyInput = screen.getByRole('textbox', { name: /company\-input/i });
   userEvent.type('Amazon', companyInput);
@@ -138,6 +141,7 @@ it('should delete a job', () => {
   expect(jobCard).not.toBeInTheDocument();
 });
 
+// Interview question test
 it('should add an interview question', () => {
   const interviewHeader = screen.getByRole('heading', {
     name: /interview questions/i,
@@ -158,4 +162,54 @@ it('should add an interview question', () => {
   userEvent.type('Facebook', companyInput);
   userEvent.click(screen.getByRole('button', { name: /add/i }));
   expect(screen.getByText(/question: what is react\?/i)).toBeInTheDocument();
+});
+
+// JobDetail test
+it('should render Job detail view', () => {
+  render(
+    <MemoryRouter initialEntries={['/profile/30/']}>
+      <App />
+    </MemoryRouter>
+  );
+
+  expect(
+    screen.getByRole('heading', { name: /company:tanium/i })
+  ).toBeInTheDocument();
+});
+
+// Resume view test
+it('renders resume view', async () => {
+  expect(
+    screen.getByRole('heading', { name: /add resume/i })
+  ).toBeInTheDocument();
+});
+
+// About view test
+it('should display our team members', () => {
+  render(
+    <MemoryRouter initialEntries={['/about']}>
+      <App />
+    </MemoryRouter>
+  );
+
+  expect(
+    screen.getByRole('heading', { name: /check our awesome team members/i })
+  );
+  expect(screen.getByText(/kevin do/i)).toBeInTheDocument();
+  expect(screen.getByText(/indy holdsworth/i)).toBeInTheDocument();
+  expect(screen.getByText(/mira kinebuchi/i)).toBeInTheDocument();
+  expect(screen.getByText(/phoenix nicholson/i)).toBeInTheDocument();
+});
+
+// Home view test
+it('should render home header', () => {
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <App />
+    </MemoryRouter>
+  );
+
+  expect(
+    screen.getByRole('heading', { name: /get that job!/i })
+  ).toBeInTheDocument();
 });

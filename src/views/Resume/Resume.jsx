@@ -49,6 +49,7 @@ export default function Resume() {
                 id="resume"
                 name="resume"
                 type="file"
+                aria-label="Choose File"
                 className="mx-auto"
               />
               <button className="px-4 py-2 mx-auto block rounded-md text-lg font-semibold text-gunmetal bg-pink hover:bg-gunmetal hover:text-white">
