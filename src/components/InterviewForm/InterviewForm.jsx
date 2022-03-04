@@ -34,17 +34,18 @@ export default function InterviewForm({
                   className="block mb-2 text-lg font-serif text-white"
                 >
                   Question:
+                  <textarea
+                    type="textarea"
+                    placeholder="Sample Question: What is “Agile” software development and what are your thoughts on it?"
+                    value={interview.interview_q}
+                    name="interview_q"
+                    aria-label="Question"
+                    onChange={(e) =>
+                      updateInterview('interview_q', e.target.value)
+                    }
+                    className="w-full font-serif p-4 text-gunmetal outline-none rounded-md"
+                  />
                 </label>
-                <textarea
-                  type="textarea"
-                  placeholder="Sample Question: What is “Agile” software development and what are your thoughts on it?"
-                  value={interview.interview_q}
-                  name="interview_q"
-                  onChange={(e) =>
-                    updateInterview('interview_q', e.target.value)
-                  }
-                  className="w-full font-serif p-4 text-gunmetal outline-none rounded-md"
-                />
               </div>
               <div>
                 <label
@@ -58,6 +59,7 @@ export default function InterviewForm({
                   placeholder="I love Agile software development: it's efficient and "
                   value={interview.answer}
                   name="answer"
+                  aria-label="Answer"
                   onChange={(e) => updateInterview('answer', e.target.value)}
                   className="w-full font-serif p-4 text-gunmetal outline-none rounded-md"
                 />
@@ -76,6 +78,7 @@ export default function InterviewForm({
                     placeholder="Sample Type: Data Model Question"
                     value={interview.type}
                     name="interview_q"
+                    aria-label="Type"
                     onChange={(e) => updateInterview('type', e.target.value)}
                     className="w-half font-serif p-4 text-gunmetal outline-none rounded-md"
                   />
@@ -92,6 +95,7 @@ export default function InterviewForm({
                     placeholder="Optional: Company it's from"
                     value={interview.company}
                     name="company"
+                    aria-label="Company"
                     onChange={(e) => updateInterview('company', e.target.value)}
                     className="w-half font-serif p-4 text-gunmetal outline-none rounded-md"
                   />

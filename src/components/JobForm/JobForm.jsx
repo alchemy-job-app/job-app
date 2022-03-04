@@ -73,6 +73,7 @@ export default function JobForm({ onSubmit, isEditing }) {
           id="company"
           name="company"
           type="text"
+          aria-label="company-input"
           value={formState.company}
           onChange={handleForm}
         />
@@ -82,6 +83,7 @@ export default function JobForm({ onSubmit, isEditing }) {
           id="deadline"
           name="deadline"
           type="date"
+          aria-label="deadline-input"
           value={formState.deadline}
           onChange={handleForm}
         />
@@ -91,6 +93,7 @@ export default function JobForm({ onSubmit, isEditing }) {
           id="position"
           name="position"
           type="text"
+          aria-label="position-input"
           value={formState.position}
           onChange={handleForm}
         />
@@ -100,6 +103,7 @@ export default function JobForm({ onSubmit, isEditing }) {
           id="notes"
           name="notes"
           type="text"
+          aria-label="notes-input"
           value={formState.notes}
           onChange={handleForm}
         />
