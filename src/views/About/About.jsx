@@ -128,11 +128,10 @@ export default function About() {
                 Software Engineer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
-                I am a driven, empathetic full stack software developer who puts
-                user experience and interaction in the forefront of my mind. I
-                am passionate about the intersectionality of mental health and
-                tech, and strive to make the online world a more accessible,
-                safe place.
+                I am a full stack software developer who puts user experience
+                and interaction in the forefront of my mind. I am passionate
+                about the intersectionality of mental health and tech, and
+                strive to make the online world a more accessible, equal field.
               </p>
               <div className="flex justify-start space-x-2">
                 <a

@@ -4,8 +4,6 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import Auth from './views/Auth/Auth';
 
-// jest.mock('./context/UserContext/UserContext');
-
 const mockJobs = [
   {
     id: 15,
