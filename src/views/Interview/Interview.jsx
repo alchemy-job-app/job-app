@@ -34,8 +34,8 @@ export default function Interview() {
   }
 
   return (
-    <div>
-      <div className="text-white h-full w-full md:px-20 pt-12 bg-road bg-no-repeat bg-center bg-cover">
+    <div className="h-screen">
+      <div className="text-white md:px-20 pt-12 min-h-screen w-full bg-road bg-no-repeat bg-center bg-cover ">
         <div>
           <InterviewForm
             interview={{ ...interview }}
