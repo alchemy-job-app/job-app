@@ -9,11 +9,11 @@ export default function Profile() {
   };
 
   return (
-    <div className="text-white bg-calm bg-no-repeat bg-cover h-full sm:h-screen w-full">
+    <div className="text-white bg-calm bg-no-repeat bg-cover min-h-screen w-full">
       <div className="pt-12">
         <button
           onClick={handleClick}
-          className="bg-pink text-gunmetal justify-center p-2 rounded-md ml-28 mb-12 hover:bg-manatee mx-auto"
+          className="bg-pink text-gunmetal justify-center p-2 rounded-md ml-28 mb-12 font-bold hover:bg-manatee mx-auto"
         >
           Add a Job!
         </button>
