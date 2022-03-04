@@ -9,7 +9,7 @@ export default function InterviewCard({ item }) {
   return (
     <div>
       <div className="rounded">
-        <div className="object-contain w-280 h-280 flex flex-col justify-between bg-charcoal rounded-lg border-2 border-gray-400 mb-6 py-5 px-4 hover:bg-teal hover:border-gunmetal">
+        <div className="object-contain w-280 h-280 flex flex-col justify-between bg-charcoal rounded-lg mb-6 py-5 px-4 hover:bg-teal hover:border-gunmetal">
           <div
             role="listitem"
             class="bg-white cursor-pointer shadow rounded-lg p-8 relative z-30 text-gunmetal break-all h-60 overflow-auto"
