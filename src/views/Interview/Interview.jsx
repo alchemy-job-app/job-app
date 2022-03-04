@@ -35,13 +35,17 @@ export default function Interview() {
 
   return (
     <div>
-      <div className="text-white h-full sm:h-screen w-full md:px-20 pt-12 bg-road bg-no-repeat bg-center bg-cover">
-        <InterviewForm
-          interview={{ ...interview }}
-          question={question}
-          updateInterview={updateInterview}
-        />
-        <InterviewList interview={interview} />
+      <div className="text-white h-screen sm:h-full w-full md:px-20 pt-12 bg-road bg-no-repeat bg-center bg-cover">
+        <div>
+          <InterviewForm
+            interview={{ ...interview }}
+            question={question}
+            updateInterview={updateInterview}
+          />
+        </div>
+        <div className="mt-12">
+          <InterviewList interview={interview} />
+        </div>
       </div>
     </div>
   );
