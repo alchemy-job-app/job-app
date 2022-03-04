@@ -10,7 +10,6 @@ export async function uploadResume(id, file) {
   await client.storage
     .from('resume-image')
     .upload(`resume/${id}`, file, { upsert: true });
-  console.log('file', file);
   const { publicURL } = client.storage
     .from('resume-image')
     .getPublicUrl(`resume/${id}`);

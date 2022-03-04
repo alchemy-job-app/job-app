@@ -27,16 +27,7 @@ export default function Resume() {
       window.location.reload();
     }
   };
-
-  // const onChange = ({ target }) => {
-  //   switch (target.name) {
-  //     case 'file':
-  //       return setFile(target.files[0]);
-  //     default:
-  //       return false;
-  //   }
-  // };
-
+  
   return (
     <div>
       <form className="text-white" onSubmit={handleSubmit}>
