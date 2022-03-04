@@ -43,9 +43,10 @@ export default function AuthForm({ onSubmit, label, isSigningUp }) {
                   </h1>
                   <p className="text-3xl my-4 text-white">
                     <span>
-                      Take the <span className="text-pink">first steps</span> to
+                      Take the <span className="text-pink">first steps </span>
                     </span>
-                    achieving your <span className="text-pink">dream job</span>
+                    to achieving your{' '}
+                    <span className="text-pink">dream job</span>
                   </p>
                 </div>
               </div>
