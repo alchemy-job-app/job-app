@@ -6,7 +6,7 @@
 # Team Members
 
 ## Kevin Do
-[LinkedIn](https://www.linkedin.com/in/kdo/) [GitHub](https://github.com/kevindo1)
+[LinkedIn](https://www.linkedin.com/in/kdo/) [GitHub](https://github.com/kevindo1) [Portfolio](https://kevindo.dev)
 
 ## Indiana H. Holdsworth
 [LinkedIn](https://www.linkedin.com/in/h-indiana-holdsworth/) [GitHub](https://github.com/H-Indiana-Holdsworth)
