@@ -14,7 +14,7 @@ export default function About() {
             <div className="w-full md:w-2/5 h-80">
               <img
                 className="object-center object-cover w-full h-full"
-                src="https://media-exp1.licdn.com/dms/image/C4D03AQHGrqoUgQlw0g/profile-displayphoto-shrink_800_800/0/1638303417494?e=1651708800&v=beta&t=zXjrQTbMD10ch2wl53rjvmSIbyomQ-i9Bwt94U3FGBQ"
+                src="https://media-exp1.licdn.com/dms/image/C5603AQFO1Eake0aivw/profile-displayphoto-shrink_800_800/0/1647297534324?e=1653523200&v=beta&t=GaKVoVA0c2lZhTa0prl6pBFva_XV1TICRceE7raMCxo"
                 alt="photo"
               />
             </div>
