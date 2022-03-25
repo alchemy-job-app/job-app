@@ -1,6 +1,7 @@
 # Good Job
 
 ## *An app that supports software developers in organizing their job application process.*
+[GoodJob.dev Title page](./goodjob-ss.jpg)
 
 # Team Members
 
