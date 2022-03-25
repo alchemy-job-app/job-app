@@ -1,43 +1,28 @@
-# adv-react-tailwind-template
+# Good Job
 
-This template is a modified version of our [React
-Template](https://github.com/alchemycodelab/react-template). It provides a way
-to use [Tailwind CSS](https://tailwindcss.com/) classes for styling React
-components by using just `className`s and no custom CSS.
+## *An app that supports software developers in organizing their job application process.*
 
-## Getting Started
+# Team Members
 
-Click "Use this template" to create a new repo with your user as the owner. Then
-clone down the newly created repo and get hacking!
+## Kevin Do
+[LinkedIn](https://www.linkedin.com/in/kdo/) [GitHub](https://github.com/kevindo1)
 
-## Differences from the [React Template](https://github.com/alchemycodelab/react-template)
+## Indiana H. Holdsworth
+[LinkedIn](https://www.linkedin.com/in/h-indiana-holdsworth/) [GitHub](https://github.com/H-Indiana-Holdsworth)
 
-Currently, this template only supports [CSS
-modules](https://css-tricks.com/css-modules-part-1-need/) if the CSS filename
-matches `*.module.css`. What this means is that when you want to use custom
-styles for a component — and you don't want those styles applied globally —
-you'll need to create a `MyComponent.module.css` file, import it, and then use
-the CSS class names as the properties of your imported stylesheet in your JSX:
+## Phoenix Nicholson
+[LinkedIn](https://www.linkedin.com/in/phoenix-nicholson/) [GitHub](https://github.com/phoenix-nicholson)
 
-### Tailwind Template
+## Mira Kinebuchi
+[LinkedIn](https://www.linkedin.com/in/mira-kinebuchi/) [GitHub](https://github.com/mira-kine)
 
-```css
-/* MyComponent.module.css */
-.myCustomCssClass {
- font-family: monospace;
-}
-```
+## Planning
 
-```js
-// MyComponent.jsx
-import styles from './MyComponent.module.css'
+Checkout our [Miro board](https://miro.com/app/board/uXjVOJ2lcbg=/)
 
-export default function MyComponent() {
-  return (
-    <h1 className={`text-white ${styles.myCustomCssClass}`}>
-      Hello, World!
-    </h1>
-  );
-}
-
-```
+## Libraries, Frameworks, Tools used:
+* React
+* React-Router-Dom
+* Netlify
+* Supabase
+* Tailwind CSS
