@@ -9,7 +9,7 @@ export default function Home() {
         How Our App Works
       </h1>
       <div>
-        <div className="bg-goodjob bg-center bg-cover bg-opacity-20 h-screen w-2/3 align-center items-center align-middle mx-auto"></div>
+        <div className="bg-goodjob bg-contain bg-no-repeat bg-opacity-20 h-screen w-2/3 align-center items-center align-middle mx-auto"></div>
       </div>
     </div>
   );
