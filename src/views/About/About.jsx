@@ -11,17 +11,14 @@ export default function About() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="w-full bg-charcoal rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
-            <div className="w-full md:w-2/5 h-80">
-              <img
-                className="object-center object-cover w-full h-full"
-                src="https://media-exp1.licdn.com/dms/image/C5603AQFO1Eake0aivw/profile-displayphoto-shrink_800_800/0/1647297534324?e=1653523200&v=beta&t=GaKVoVA0c2lZhTa0prl6pBFva_XV1TICRceE7raMCxo"
-                alt="photo"
-              />
-            </div>
+            <div
+              className="w-full md:w-2/5 h-80 bg-kevin bg-center bg-cover"
+              alt="photo"
+            ></div>
             <div className="w-full md:w-3/5 text-left p-4 md:p-4 space-y-2">
               <p className="text-xl text-white font-bold">Kevin Do</p>
               <p className="text-base text-manatee font-normal">
-                Software Engineer
+                Software Developer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
                 I am a full stack software developer with backgrounds in
@@ -65,17 +62,14 @@ export default function About() {
             </div>
           </div>
           <div className="w-full bg-charcoal rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
-            <div className="w-full md:w-2/5 h-80">
-              <img
-                className="object-center object-cover w-full h-full"
-                src="https://media-exp1.licdn.com/dms/image/C5603AQFkDvmsf9zbiA/profile-displayphoto-shrink_800_800/0/1645230890388?e=1651708800&v=beta&t=5naNq_iNw8XH03_kRklqQFxQb3okFBTonJ6CcAdiVVI"
-                alt="photo"
-              />
-            </div>
+            <div
+              className="w-full md:w-2/5 h-80 bg-indy bg-center bg-cover"
+              alt="photo"
+            ></div>
             <div className="w-full md:w-3/5 text-left p-6 md:p-4 space-y-2">
               <p className="text-xl text-white font-bold">Indy Holdsworth</p>
               <p className="text-base text-manatee font-normal">
-                Software Engineer
+                Software Developer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
                 Full-Stack Software Developer and avid organizer
@@ -115,17 +109,14 @@ export default function About() {
             </div>
           </div>
           <div className="w-full bg-charcoal rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
-            <div className="w-full md:w-2/5 h-80">
-              <img
-                className="object-center object-cover w-full h-full"
-                src="https://media-exp1.licdn.com/dms/image/C5603AQH6RNuhVLHYIA/profile-displayphoto-shrink_800_800/0/1638296498343?e=1651708800&v=beta&t=PU9B8iEr0RDQJcX9EQ1WfSzh13M94PV-_u07b4-Qv_I"
-                alt="photo"
-              />
-            </div>
+            <div
+              className="w-full md:w-2/5 h-80 bg-mira bg-center bg-cover"
+              alt="photo"
+            ></div>
             <div className="w-full md:w-3/5 text-left p-4 md:p-4 space-y-2">
               <p className="text-xl text-white font-bold">Mira Kinebuchi</p>
               <p className="text-base text-manatee font-normal">
-                Software Engineer
+                Software Developer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
                 I am a full stack software developer who puts user experience
@@ -168,17 +159,14 @@ export default function About() {
             </div>
           </div>
           <div className="w-full bg-charcoal rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
-            <div className="w-full md:w-2/5 h-80">
-              <img
-                className="object-center object-cover w-full h-full"
-                src="https://media-exp1.licdn.com/dms/image/C4E03AQGhUW5Qi0FLzw/profile-displayphoto-shrink_800_800/0/1633713633749?e=1651708800&v=beta&t=5XfSIO_7afNcSoPuZab2FVNxzgAbrcOfM6aszdFJ6oE"
-                alt="photo"
-              />
-            </div>
+            <div
+              className="w-full md:w-2/5 h-80 bg-phoenix bg-center bg-cover"
+              alt="photo"
+            ></div>
             <div className="w-full md:w-3/5 text-left p-4 md:p-4 space-y-2">
               <p className="text-xl text-white font-bold">Phoenix Nicholson</p>
               <p className="text-base text-manatee font-normal">
-                Software Engineer
+                Software Developer
               </p>
               <p className="text-base leading-relaxed text-manatee font-normal">
                 I am a full stack software developer that likes to apply my
