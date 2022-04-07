@@ -144,11 +144,10 @@ export default function JobForm({ onSubmit, isEditing }) {
                   id="notes"
                   name="notes"
                   type="text"
-                  id="description"
                   aria-label="Notes"
                   cols="30"
                   rows="10"
-                  // placeholder="write here.."
+                  placeholder="write here.."
                   class="w-full p-4 rounded-md border-2"
                   value={formState.notes}
                   onChange={handleForm}
