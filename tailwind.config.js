@@ -11,6 +11,10 @@ module.exports = {
         wave: "url('/public/assets/wave.png')",
         calm: "url('/public/assets/calm.jpg')",
         goodjob: "url('/public/assets/goodjob.gif')",
+        indy: "url('/public/assets/indy.jpeg')",
+        kevin: "url('/public/assets/kevin.jpeg')",
+        mira: "url('/public/assets/mira.jpeg')",
+        phoenix: "url('/public/assets/phoenix.jpeg')",
       },
     },
     colors: {
