@@ -10,6 +10,7 @@ module.exports = {
         road: "url('/public/assets/road.png')",
         wave: "url('/public/assets/wave.png')",
         calm: "url('/public/assets/calm.jpg')",
+        goodjob: "url('/public/assets/goodjob.gif')",
       },
     },
     colors: {
