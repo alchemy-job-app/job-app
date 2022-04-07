@@ -15,6 +15,8 @@ export default function JobForm({ onSubmit, isEditing }) {
       deadline: '',
       company: '',
       position: '',
+      referrer: '',
+      link: '',
       completion: false,
     });
 
@@ -27,16 +29,34 @@ export default function JobForm({ onSubmit, isEditing }) {
     e.preventDefault();
     //when button clicked call onSubmit
     //define formState
-    const { notes, deadline, company, position, completion } = formState;
+    const { notes, deadline, company, position, completion, referrer, link } =
+      formState;
     try {
       if (isEditing) {
         await completedJob(job.id, !job.completion);
-        await onSubmit({ id, notes, deadline, company, position, completion });
+        await onSubmit({
+          id,
+          notes,
+          deadline,
+          company,
+          position,
+          completion,
+          referrer,
+          link,
+        });
         const resp = await getJobById(job.id);
         setJob(resp);
         history.replace(`/profile`);
       } else {
-        await onSubmit({ notes, deadline, company, position, completion });
+        await onSubmit({
+          notes,
+          deadline,
+          company,
+          position,
+          completion,
+          referrer,
+          link,
+        });
         history.replace(`/profile`);
       }
     } catch (error) {
@@ -81,7 +101,7 @@ export default function JobForm({ onSubmit, isEditing }) {
             )}
             <div class="space-y-4">
               <div>
-                <label className="text-lg ">Company:</label>
+                <label className="text-lg">Company:</label>
                 <input
                   className="text-gunmetal ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
                   id="company"
@@ -89,6 +109,30 @@ export default function JobForm({ onSubmit, isEditing }) {
                   type="text"
                   aria-label="Company"
                   value={formState.company}
+                  onChange={handleForm}
+                />
+              </div>
+              <div>
+                <label className="text-lg">Referrer:</label>
+                <input
+                  className="text-gunmetal ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
+                  id="referrer"
+                  name="referrer"
+                  type="text"
+                  aria-label="referrer"
+                  value={formState.referrer}
+                  onChange={handleForm}
+                />
+              </div>
+              <div>
+                <label className="text-lg">App Link:</label>
+                <input
+                  className="text-gunmetal ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
+                  id="link"
+                  name="link"
+                  type="text"
+                  aria-label="link"
+                  value={formState.link}
                   onChange={handleForm}
                 />
               </div>
@@ -104,7 +148,7 @@ export default function JobForm({ onSubmit, isEditing }) {
                   aria-label="Notes"
                   cols="30"
                   rows="10"
-                  placeholder="write here.."
+                  // placeholder="write here.."
                   class="w-full p-4 rounded-md border-2"
                   value={formState.notes}
                   onChange={handleForm}

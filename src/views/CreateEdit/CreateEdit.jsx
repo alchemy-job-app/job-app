@@ -10,6 +10,8 @@ export default function CreateEdit({ isEditing = false }) {
     company,
     completion,
     position,
+    referrer,
+    link,
   }) => {
     try {
       if (isEditing) {
@@ -20,9 +22,19 @@ export default function CreateEdit({ isEditing = false }) {
           company,
           completion,
           position,
+          referrer,
+          link,
         });
       } else {
-        await createJob({ notes, deadline, company, completion, position });
+        await createJob({
+          notes,
+          deadline,
+          company,
+          completion,
+          position,
+          referrer,
+          link,
+        });
       }
     } catch (error) {
       throw error;

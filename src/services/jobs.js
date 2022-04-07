@@ -12,10 +12,12 @@ export async function updateJob({
   company,
   position,
   completion,
+  referrer,
+  link,
 }) {
   const { data } = await client
     .from('jobs')
-    .update({ notes, deadline, company, position, completion })
+    .update({ notes, deadline, company, position, completion, referrer, link })
     .match({ id });
   return parseData(data);
 }
@@ -26,6 +28,8 @@ export async function createJob({
   company,
   position,
   completion,
+  referrer,
+  link,
 }) {
   const request = await client.from('jobs').insert({
     notes,
@@ -33,6 +37,8 @@ export async function createJob({
     company,
     position,
     completion,
+    referrer,
+    link,
     user_id: client.auth.user().id,
   });
   return parseData(request);
