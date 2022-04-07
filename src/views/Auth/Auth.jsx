@@ -12,6 +12,9 @@ export default function Auth({ isSigningUp = false }) {
     try {
       // if you are signing up, use signUp services fxn and push to confirm email
       if (isSigningUp) {
+        // set your user here (you get the user object back from the signUpUser request)
+        // then you don't have to sign in again and can just
+        // go straigt to profile
         await signUpUser(email, password);
         history.replace('/sign-in');
       } else {
@@ -22,6 +25,8 @@ export default function Auth({ isSigningUp = false }) {
         history.replace('/profile');
       }
     } catch (error) {
+      // would be good to let the user know if something went wrong
+      // instead of failing silently
       throw error;
     }
   };
