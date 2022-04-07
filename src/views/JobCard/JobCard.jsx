@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { useJob } from '../../hooks/useJob';
@@ -14,6 +16,11 @@ export default function JobCard() {
   const handleBack = () => {
     history.push('/profile/');
   };
+
+  const handleLink = () => {
+    window.location.href = `${job.link}`;
+  };
+
   return (
     <>
       <div className="bg-calm bg-no-repeat bg-cover h-screen w-full text-teal">
@@ -24,6 +31,16 @@ export default function JobCard() {
                 <h4 className="mb-3">
                   <span className="font-bold text-3xl m-1">Company:</span>
                   <span className="text-manatee text-3xl">{job.company}</span>
+                </h4>
+                <h4 className="mb-3">
+                  <span className="font-bold text-2xl m-1">Referrer:</span>
+                  <span className="text-manatee text-2xl">{job.referrer}</span>
+                </h4>
+                <h4 className="mb-3">
+                  <span className="font-bold text-2xl m-1">App Link:</span>
+                  <span className="text-manatee text-2xl">
+                    <Link onClick={handleLink}>{job.link}</Link>
+                  </span>
                 </h4>
 
                 <p name="text-sm">
