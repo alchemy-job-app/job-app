@@ -1,7 +1,22 @@
 module.exports = {
   content: ['./src/**/*.{html,js,jsx}'],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        winter: "url('/public/assets/winter.jpg')",
+        city: "url('/public/assets/city.png')",
+        banner: "url('/public/assets/banner.png')",
+        beach2: "url('/public/assets/beach2.png')",
+        road: "url('/public/assets/road.png')",
+        wave: "url('/public/assets/wave.png')",
+        calm: "url('/public/assets/calm.jpg')",
+        goodjob: "url('/public/assets/goodjob.gif')",
+        indy: "url('/public/assets/indy.jpeg')",
+        kevin: "url('/public/assets/kevin.jpeg')",
+        mira: "url('/public/assets/mira.jpeg')",
+        phoenix: "url('/public/assets/phoenix.jpeg')",
+      },
+    },
     colors: {
       pink: '#DBC2CF',
       manatee: '#9FA2B2',
@@ -9,6 +24,8 @@ module.exports = {
       charcoal: '#2E4756',
       gunmetal: '#16262E',
       white: '#e2e8f0',
+      purewhite: '#ffffff',
+      pinkcard: '#F0DEE7',
     },
   },
   plugins: [],
