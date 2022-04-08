@@ -33,7 +33,7 @@ export async function createJob({
 }) {
   const request = await client.from('jobs').insert({
     notes,
-    deadline,
+    deadline: deadline || null,
     company,
     position,
     completion,
